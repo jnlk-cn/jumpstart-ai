@@ -4,93 +4,78 @@ layout: home
 hero:
   name: "AIアプリ開発実践"
   text: "まず乗れ、後で学べ"
-  tagline: "8週間入門ガイド | ゼロからAIアプリ開発者へ"
+  tagline: "AIアプリケーション開発への最短ルート"
+  image:
+    src: /hero-illustration.svg
+    alt: AIアプリケーション開発
   actions:
     - theme: brand
-      text: 読み始める →
-      link: /ja/part1-cognition/
+      text: 読み始める
+      link: /ja/chapter1
     - theme: alt
-      text: クイックナビ
-      link: /ja/part1-cognition/chapter1
-  image:
-    src: /logo.svg
-    alt: Jumpstart AI
+      text: 🇨🇳 简体中文
+      link: /zh/
+    - theme: alt
+      text: 🇬🇧 English
+      link: /en/
+    - theme: alt
+      text: 🇰🇷 한국어
+      link: /ko/
 
 features:
   - icon: 🚀
-    title: まず行動、後で準備
-    details: 「入る前に準備を」という思考パターンを打ち破る。AI分野の変化は速い。
-  - icon: 🎯
     title: 実践重視
-    details: 各章にはすぐに使える実践的なテクニックが詰まっています。
-  - icon: 🗺️
-    title: 明確なロードマップ
-    details: 認知、基盤、実践、上級、就活まで、完璧な学習パス。
-  - icon: 💼
-    title: 就活サポート
-    details: 履歴書作成、面接対策、入社適応まで完全サポート。
-  - icon: 🌏
-    title: 4言語対応
-    details: 中国語、英語、日本語、韓国語、完全対応。
-  - icon: 🌙
-    title: ダークモード
-    details: ライト/ダークモードの切り替えに対応。
-
+    details: 最初から реальных プロジェクトで学ぶ
+  - icon: 🎯
+    title: キャリアロードマップ
+    details: 初心者からAI開発者への明確な道筋
+  - icon: 💡
+    title: まず飛び込む
+    details: 実践で学習の壁を突破
+  - icon: 🔧
+    title: ツール参照
+    details: クイック検索可能な完全なツールキット
+  - icon: 📚
+    title: 体系的な学習
+    details: 基礎から応用への段階的スキル構築
+  - icon: 🎤
+    title: 面接対策
+    details: 実際の面接質問と回答
 ---
 
-<div class="multi-language-title">
+<div class="language-banner">
 
-## 🇨🇳 中文
-**AI应用开发入行实战：先上车后补票**
+## 🌐 多言語バージョン
 
-## 🇬🇧 English
-**Jumpstart AI: Build First, Learn As You Go**
+| 言語 | 書名 | 状態 |
+|:---:|:---|:---:|
+| 🇨🇳 简体中文 | AI应用开发入行实战：先上车后补票 | ✅ 完全版 |
+| 🇬🇧 English | Jumpstart AI: Build First, Learn As You Go | 🔄 翻訳中 |
+| 🇯🇵 日本語 | AIアプリ開発実践：まず乗れ、後で学べ | 🔄 翻訳中 |
+| 🇰🇷 한국어 | AI 앱 개발 실전: 먼저 타라, 나중에 배워라 | 🔄 번역 중 |
 
-## 🇯🇵 日本語
-**AIアプリ開発実践：まず乗れ、後で学べ**
+</div>
 
-## 🇰🇷 한국어
-**AI 앱 개발 실전: 먼저 타라, 나중에 배워라**
+<div class="translation-notice">
+
+> 📝 **翻訳について**: 章の要約とナビゲーションは翻訳済みです。本編の翻訳は順次進行中です。
 
 </div>
 
 <style>
-.multi-language-title {
-  text-align: center;
-  padding: 3rem 1rem;
+.language-banner {
+  margin-top: 3rem;
+  padding: 1.5rem;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  border-radius: 16px;
-  margin: 2rem 0;
+  border-radius: 12px;
   color: white;
 }
 
-.multi-language-title h3 {
-  font-size: 1.3rem;
-  margin: 0.8rem 0;
-  color: white;
-  font-weight: 600;
-}
-
-.VPHome {
-  background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
-}
-
-.dark .VPHome {
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-}
-
-.VPHero .name {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-size: 3.5rem;
-}
-
-.dark .VPHero .name {
-  background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+.translation-notice {
+  margin-top: 2rem;
+  padding: 1rem;
+  background: #fef3c7;
+  border-left: 4px solid #f59e0b;
+  border-radius: 8px;
 }
 </style>

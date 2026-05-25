@@ -1,94 +1,79 @@
 # Jumpstart AI: Build First, Learn As You Go
 
-<div align="center">
+🇨🇳 AI应用开发入行实战：先上车后补票
 
-![Jumpstart AI Logo](./docs/public/logo.svg)
+A practical guide for beginners entering the AI application development field.
 
-**AI应用开发入行实战：先上车后补票**
+## 🌐 Multi-Language Support
 
-*[English](./docs/en/) · [中文](./docs/zh/) · [日本語](./docs/ja/) · [한국어](./docs/ko/)*
+| Language | Link |
+|:---|:---|
+| 🇨🇳 简体中文 | [zh/jumpstart-ai](https://jnlk-cn.github.io/jumpstart-ai/zh/) |
+| 🇬🇧 English | [en](https://jnlk-cn.github.io/jumpstart-ai/en/) |
+| 🇯🇵 日本語 | [ja](https://jnlk-cn.github.io/jumpstart-ai/ja/) |
+| 🇰🇷 한국어 | [ko](https://jnlk-cn.github.io/jumpstart-ai/ko/) |
 
-[![Deploy to GitHub Pages](https://github.com/jnlk-cn/jumpstart-ai/actions/workflows/deploy.yml/badge.svg)](https://github.com/jnlk-cn/jumpstart-ai/actions/workflows/deploy.yml)
+## 📚 Book Structure
 
-</div>
+### Part 1: Cognition (认知篇)
+- Chapter 1: The Truth About AI Application Development
+- Chapter 2: Why "Jumping In First" is a Rational Strategy
+- Chapter 3: Your Career Roadmap
 
----
+### Part 2: Fundamentals (基础篇)
+- Chapter 4: Python and Engineering Basics
+- Chapter 5: LLM API Calls and Prompt Engineering
+- Chapter 6: RAG - Retrieval Augmented Generation
+- Chapter 7: AI Agent Core Logic
 
-## 📖 About This Book
+### Part 3: Practice (实战篇)
+- Chapter 8: From Prompt Engineering to Agent Development
+- Chapter 9: LangChain in Practice
+- Chapter 10: LlamaIndex and Vector Databases
+- Chapter 11: Agent Development and Skill Development
+- Chapter 12: Service Deployment and Engineering
 
-**Jumpstart AI** is a practical guide for anyone who wants to break into AI application development. 
+### Part 4: Advanced (进阶篇)
+- Chapter 13: Reproducing Open Source Projects
+- Chapter 14: Business Thinking
+- Chapter 15: Systematic Learning
 
-The core philosophy: **Don't wait to be ready - get in first, learn as you go.**
+### Part 5: Career (求职篇)
+- Chapter 16: Resume and Portfolio
+- Chapter 17: Interview Practice
+- Chapter 18: First 30 Days at Work
+- Chapter 19: First 6 Months
+- Chapter 20: The Future of AI Developers
 
-In the rapidly evolving AI landscape, the half-life of technical skills is surprisingly short. By the time you feel "fully prepared," the field may have already moved on. This book teaches you how to start building real AI applications now, while continuously learning and improving.
+### Appendices (附录)
+- Appendix A: Tools Quick Reference
+- Appendix B: Common Errors and Solutions
+- Appendix C: Learning Resources
+- Appendix D: 8-Week Learning Plan
+- Appendix E: 50 Interview Questions
 
-### What You'll Learn
+## 🛠️ Tech Stack
 
-- **Part I: Cognition** - Understanding the AI development landscape and why "getting in first" is the rational strategy
-- **Part II: Fundamentals** - Python, LLM APIs, Prompt Engineering, RAG, and AI Agent concepts
-- **Part III: Practice** - Real-world projects with LangChain, LlamaIndex, and more
-- **Part IV: Advanced** - Open source contribution, business thinking, and knowledge building
-- **Part V: Career** - Resume building, interview preparation, and career growth
+- [VitePress](https://vitepress.dev/) - Static Site Generator
+- Vue 3 - UI Framework
+- GitHub Pages - Hosting
 
----
-
-## 🌐 Live Site
-
-**https://jnlk-cn.github.io/jumpstart-ai/**
-
----
-
-## 🚀 Quick Start
+## 🚀 Development
 
 ```bash
-# Clone the repository
-git clone https://github.com/jnlk-cn/jumpstart-ai.git
-cd jumpstart-ai
-
 # Install dependencies
 npm install
 
-# Start development server
+# Start dev server
 npm run docs:dev
 
 # Build for production
 npm run docs:build
+
+# Preview production build
+npm run docs:preview
 ```
-
----
-
-## 📚 Book Structure
-
-```
-docs/
-├── zh/                    # 中文 (Chinese)
-├── en/                    # English
-├── ja/                    # 日本語 (Japanese)
-└── ko/                    # 한국어 (Korean)
-```
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome! Please read our contribution guidelines before submitting PRs.
-
----
 
 ## 📄 License
 
-This book is released under the MIT License. See the [LICENSE](LICENSE) file for details.
-
----
-
-## 🙏 Acknowledgments
-
-Special thanks to all contributors and the AI development community.
-
----
-
-<div align="center">
-
-**Made with ❤️ by [jnlk-cn](https://github.com/jnlk-cn)**
-
-</div>
+MIT License - Feel free to use and modify.

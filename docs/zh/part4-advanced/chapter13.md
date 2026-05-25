@@ -1,10 +1,10 @@
 ---
-outline: deep
+outline: [2, 3]
 ---
 
-##### 第11章 复现开源项目，攒真实排坑经验
+# 第11章 复现开源项目，攒真实排坑经验
 
-#### 本章你能带走什么
+## 本章你能带走什么
 
 恭喜你，终于进入进阶篇了！
 
@@ -27,9 +27,9 @@ outline: deep
 
 ---
 
-#### 11.1 如何选择适合复现的GitHub项目
+## 11.1 如何选择适合复现的GitHub项目
 
-###### 不是所有Star都值得clone
+### 不是所有Star都值得clone
 
 我见过太多人star了一堆项目，然后永远躺在收藏夹里吃灰。也见过有人挑了个万人star的项目，结果clone下来完全看不懂，信心受挫。
 
@@ -46,7 +46,7 @@ outline: deep
 **3. 有中文社区或者详细的部署文档**
 英文文档不是不能看，但有中文教程的项目能省你大量时间。最好是有Docker部署说明的，省去环境配置的坑。
 
-###### 推荐的新手入门项目清单
+### 推荐的新手入门项目清单
 
 **RAG方向（适合入门）：**
 
@@ -64,7 +64,7 @@ outline: deep
 | AutoGPT | significantautopgpt/auto-gpt | 12k | Agent先驱，架构清晰 |
 | MetaGPT | FoundationAgents/MetaGPT | 35k | 多Agent协作，有完整文档 |
 
-###### 判断项目是否值得复现的快速检查清单
+### 判断项目是否值得复现的快速检查清单
 
 clone之前，先做这几个检查：
 
@@ -90,9 +90,9 @@ clone之前，先做这几个检查：
 
 ---
 
-#### 11.2 跑通RAG项目的典型步骤与常见报错
+## 11.2 跑通RAG项目的典型步骤与常见报错
 
-###### 典型复现步骤
+### 典型复现步骤
 
 以RAGFlow为例，说说跑通一个RAG项目的标准流程：
 
@@ -106,11 +106,11 @@ clone之前，先做这几个检查：
 **第二步：准备环境**
 
 ```bash
-##### 推荐用conda创建独立环境
+# 推荐用conda创建独立环境
 conda create -n ragflow python=3.11
 conda activate ragflow
 
-##### 安装依赖
+# 安装依赖
 pip install -r requirements.txt
 ```
 
@@ -119,7 +119,7 @@ pip install -r requirements.txt
 大多数RAG项目需要大模型API。创建`.env`文件：
 
 ```bash
-##### .env 文件
+# .env 文件
 OPENAI_API_KEY=sk-xxxxxxxxxxxxxxxx
 OPENAI_API_BASE=https://api.openai.com/v1
 ```
@@ -130,16 +130,16 @@ OPENAI_API_BASE=https://api.openai.com/v1
 python run greeting.py  # 先跑官方示例
 ```
 
-###### RAG项目常见报错与解决
+### RAG项目常见报错与解决
 
 **报错1：ImportError: cannot import name xxx from langchain**
 
 ```python
-##### 原因：LangChain版本不匹配
-##### 旧版: from langchain.chat_models import ChatOpenAI
-##### 新版: from langchain_openai import ChatOpenAI
+# 原因：LangChain版本不匹配
+# 旧版: from langchain.chat_models import ChatOpenAI
+# 新版: from langchain_openai import ChatOpenAI
 
-##### 解决：检查requirements.txt指定的版本，或者用兼容导入
+# 解决：检查requirements.txt指定的版本，或者用兼容导入
 try:
     from langchain_openai import ChatOpenAI
 except ImportError:
@@ -153,14 +153,14 @@ PermissionError: [Errno 13] Permission denied: './chroma_db'
 ```
 
 ```python
-##### 解决：检查目录权限，或者改用内存模式（开发用）
+# 解决：检查目录权限，或者改用内存模式（开发用）
 import chromadb
 from chromadb.config import Settings
 
-##### 生产环境用持久化
+# 生产环境用持久化
 client = chromadb.PersistentClient(path="./chroma_db")
 
-##### 开发环境用内存模式
+# 开发环境用内存模式
 client = chromadb.Client()
 ```
 
@@ -171,17 +171,17 @@ RuntimeError: Failed to load embedding model
 ```
 
 ```python
-##### 解决：检查模型名称和下载状态
+# 解决：检查模型名称和下载状态
 from langchain_huggingface import HuggingFaceEmbeddings
 
-##### 先测试模型能否下载
+# 先测试模型能否下载
 embeddings = HuggingFaceEmbeddings(
     model_name="BAAI/bge-m3",
     model_kwargs={'device': 'cpu'},
     encode_kwargs={'normalize_embeddings': True}
 )
 
-##### 测试一下
+# 测试一下
 test_vector = embeddings.embed_query("测试文本")
 print(f"向量维度: {len(test_vector)}")  # BGE-M3应该是1024
 ```
@@ -193,17 +193,17 @@ UnstructuredPDFLoadError: PDF not valid
 ```
 
 ```python
-##### 解决：检查PDF是否损坏，或者换用其他解析器
+# 解决：检查PDF是否损坏，或者换用其他解析器
 from langchain_community.document_loaders import PyPDFLoader, PDFPlumberLoader
 
-##### 方案1：使用PyPDF2（更鲁棒）
+# 方案1：使用PyPDF2（更鲁棒）
 loader = PyPDFLoader("document.pdf")
 
-##### 方案2：使用在线解析服务
-##### 方案3：先OCR扫描件
+# 方案2：使用在线解析服务
+# 方案3：先OCR扫描件
 ```
 
-###### RAG检索质量排坑指南
+### RAG检索质量排坑指南
 
 据RAG排坑实录（https://juejin.cn/post/7635980532212203554），有两个高频问题：
 
@@ -212,22 +212,22 @@ loader = PyPDFLoader("document.pdf")
 原因：切块策略按字符数切分，导致语义被打断。
 
 ```python
-##### ❌ 问题代码
+# ❌ 问题代码
 text_splitter = RecursiveCharacterTextSplitter(
     chunk_size=500,  # 太小，容易打断语义
     chunk_overlap=50  # 重叠太少
 )
 
-##### ✅ 优化方案
+# ✅ 优化方案
 from langchain_text_splitters import MarkdownHeaderTextSplitter
 
-##### 按语义边界切分
+# 按语义边界切分
 headerssplitter = MarkdownHeaderTextSplitter(
     headers_to_split_on=[("#", "标题1"), ("##", "标题2")]
 )
 docs = headerssplitter.split_text(text)
 
-##### 再用字符数兜底
+# 再用字符数兜底
 text_splitter = RecursiveCharacterTextSplitter(
     chunk_size=500,
     chunk_overlap=100  # 加大重叠
@@ -239,10 +239,10 @@ text_splitter = RecursiveCharacterTextSplitter(
 原因：Embedding模型选型不当。
 
 ```python
-##### ❌ 中文场景用英文Embedding
+# ❌ 中文场景用英文Embedding
 embeddings = OpenAIEmbeddings()  # 对中文效果差
 
-##### ✅ 用中文优化的Embedding
+# ✅ 用中文优化的Embedding
 from langchain_huggingface import HuggingFaceEmbeddings
 embeddings = HuggingFaceEmbeddings(
     model_name="BAAI/bge-m3",  # 中文首选
@@ -252,18 +252,18 @@ embeddings = HuggingFaceEmbeddings(
 
 ---
 
-#### 11.3 跑通Agent项目的典型步骤与常见报错
+## 11.3 跑通Agent项目的典型步骤与常见报错
 
-###### Agent项目的特殊挑战
+### Agent项目的特殊挑战
 
 Agent项目比RAG更复杂，因为它涉及**多轮交互**和**工具调用**。RAG是"一锤子买卖"，Agent是"持续对话"，出问题的点更多。
 
-###### 典型复现步骤
+### 典型复现步骤
 
 **第一步：理解Agent的执行循环**
 
 ```python
-##### Agent的核心循环（简化版）
+# Agent的核心循环（简化版）
 while True:
     # 1. 感知：获取用户输入和工具返回
     observation = get_observation()
@@ -283,16 +283,16 @@ while True:
 Agent需要调用各种外部工具，配置更复杂：
 
 ```bash
-##### .env 配置示例
-##### 大模型
+# .env 配置示例
+# 大模型
 OPENAI_API_KEY=sk-xxx
 OPENAI_API_BASE=https://api.openai.com/v1
 
-##### 搜索工具（如果需要）
+# 搜索工具（如果需要）
 SEARCH_API_KEY=xxx
 SEARCH_ENGINE_ID=xxx
 
-##### 数据库（如果需要）
+# 数据库（如果需要）
 DB_HOST=localhost
 DB_PORT=5432
 ```
@@ -300,18 +300,18 @@ DB_PORT=5432
 **第三步：运行示例，观察日志**
 
 ```python
-##### 启用LangSmith调试（非常推荐）
+# 启用LangSmith调试（非常推荐）
 import os
 os.environ["LANGSMITH_TRACING"] = "true"
 os.environ["LANGSMITH_API_KEY"] = "your-api-key"
 
-##### 运行Agent
+# 运行Agent
 agent = create_react_agent(llm, tools)
 result = agent.invoke({"input": "帮我查一下今天北京的天气"})
 print(result)
 ```
 
-###### Agent项目常见报错
+### Agent项目常见报错
 
 **报错1：工具调用参数格式错误**
 
@@ -320,8 +320,8 @@ ToolValidationError: Invalid arguments for tool 'search'
 ```
 
 ```python
-##### 问题：模型输出的参数格式不符合定义
-##### 解决：使用Pydantic验证和转换
+# 问题：模型输出的参数格式不符合定义
+# 解决：使用Pydantic验证和转换
 
 from pydantic import BaseModel, Field
 from typing import Optional
@@ -343,8 +343,8 @@ MaxIterationsExceededError: Agent reached maximum iterations
 ```
 
 ```python
-##### 问题：Agent陷入死循环，不断调用同一工具
-##### 解决：添加循环检测和终止条件
+# 问题：Agent陷入死循环，不断调用同一工具
+# 解决：添加循环检测和终止条件
 
 class AgentLoopDetector:
     def __init__(self, max_repeat=3):
@@ -359,7 +359,7 @@ class AgentLoopDetector:
                 return False  # 应该停止
         return True
 
-##### 使用
+# 使用
 detector = AgentLoopDetector(max_repeat=3)
 if not detector.check(current_action):
     return "我无法完成这个任务，请提供更多信息"
@@ -372,8 +372,8 @@ ContextLengthExceededError: Maximum context length exceeded
 ```
 
 ```python
-##### 问题：对话历史太长，超过了模型的上下文窗口
-##### 解决：实现上下文压缩
+# 问题：对话历史太长，超过了模型的上下文窗口
+# 解决：实现上下文压缩
 
 from langchain_core.messages import HumanMessage, AIMessage
 
@@ -398,8 +398,8 @@ def summarize_if_needed(messages, max_messages=10):
 **报错4：工具返回结果太大**
 
 ```python
-##### 问题：工具返回了太多数据，导致上下文爆炸
-##### 解决：截断或摘要
+# 问题：工具返回了太多数据，导致上下文爆炸
+# 解决：截断或摘要
 
 def truncate_tool_result(result: str, max_tokens=2000) -> str:
     """截断过长的工具返回结果"""
@@ -409,54 +409,54 @@ def truncate_tool_result(result: str, max_tokens=2000) -> str:
     return result
 ```
 
-###### LangGraph调试技巧
+### LangGraph调试技巧
 
 如果你用LangGraph（推荐），可以利用它的可视化能力：
 
 ```python
 from langgraph.graph import StateGraph
 
-##### 查看Agent的图结构
+# 查看Agent的图结构
 app = workflow.compile()
 
-##### 导出图片
+# 导出图片
 app.get_graph().draw_mermaid_png(output_file_path="agent_graph.png")
 
-##### 打印状态转换
+# 打印状态转换
 for step in app.stream({"messages": [HumanMessage(content="你好")]}, stream_mode="values"):
     print(step)
 ```
 
 ---
 
-#### 11.4 模型幻觉：原因、检测与缓解
+## 11.4 模型幻觉：原因、检测与缓解
 
-###### 什么是模型幻觉？
+### 什么是模型幻觉？
 
 幻觉（Hallucination）就是AI**一本正经地胡说八道**——它输出的内容听起来很流畅、很有道理，但实际上与事实不符、或者与上下文矛盾。
 
 这是大模型的"本性"，无法完全消除，只能缓解。
 
-###### 幻觉的两大类型
+### 幻觉的两大类型
 
 **内因幻觉（Intrinsic）**：与输入上下文矛盾
 
 ```python
-##### 用户说："我的狗叫小白"
-##### AI回答："小白是一只黑色的猫"
-##### → 与用户输入矛盾
+# 用户说："我的狗叫小白"
+# AI回答："小白是一只黑色的猫"
+# → 与用户输入矛盾
 ```
 
 **外因幻觉（Extrinsic）**：与外部事实不符
 
 ```python
-##### 用户问："特斯拉2025年的营收是多少？"
-##### AI回答："特斯拉2025年营收为1230亿美元"
-##### （实际是另一个数字）
-##### → 与真实世界不符
+# 用户问："特斯拉2025年的营收是多少？"
+# AI回答："特斯拉2025年营收为1230亿美元"
+# （实际是另一个数字）
+# → 与真实世界不符
 ```
 
-###### 幻觉的检测方法
+### 幻觉的检测方法
 
 **方法1：检索结果交叉验证**
 
@@ -526,12 +526,12 @@ def monitor_retrieval_quality(query, retrieved_docs, threshold=0.7):
     return all(score >= threshold for _, score in retrieved_docs)
 ```
 
-###### 幻觉的缓解策略
+### 幻觉的缓解策略
 
 **策略1：RAG增强（最重要）**
 
 ```python
-##### 确保RAG检索质量
+# 确保RAG检索质量
 def enhanced_rag_prompt(question, context):
     """
     强化Prompt，让模型依赖检索结果
@@ -600,9 +600,9 @@ def calibrated_response(question):
 
 ---
 
-#### 11.5 响应延迟：瓶颈定位与优化手段
+## 11.5 响应延迟：瓶颈定位与优化手段
 
-###### 延迟的来源
+### 延迟的来源
 
 LLM应用的延迟主要由以下几部分组成：
 
@@ -616,7 +616,7 @@ LLM应用的延迟主要由以下几部分组成：
 - 网络：5-10%
 ```
 
-###### 瓶颈定位方法
+### 瓶颈定位方法
 
 **使用LangSmith追踪延迟**
 
@@ -651,7 +651,7 @@ def timed(label):
         return wrapper
     return decorator
 
-##### 使用示例
+# 使用示例
 @timed("检索阶段")
 def retrieval_step(query):
     return vectorstore.similarity_search(query, k=5)
@@ -660,31 +660,31 @@ def retrieval_step(query):
 def generation_step(context):
     return llm.invoke(context)
 
-##### 定位慢的环节
+# 定位慢的环节
 query = "什么是RAG？"
 context = retrieval_step(query)  # 看看检索耗时
 response = generation_step(context)  # 看看生成耗时
 ```
 
-###### 优化手段
+### 优化手段
 
 **优化1：减少输入Token**
 
 ```python
-##### ❌ 塞太多上下文
+# ❌ 塞太多上下文
 context = full_document  # 可能几万字
 
-##### ✅ 只取最相关的片段
+# ✅ 只取最相关的片段
 context = "\n\n".join([d.page_content for d in top_k_docs])
 ```
 
 **优化2：使用流式响应**
 
 ```python
-##### ❌ 等待完整响应
+# ❌ 等待完整响应
 response = llm.invoke(prompt)  # 用户要等10秒才看到任何东西
 
-##### ✅ 流式输出，用户体验更好
+# ✅ 流式输出，用户体验更好
 for chunk in llm.stream(prompt):
     print(chunk.content, end="", flush=True)  # 边生成边显示
 ```
@@ -699,7 +699,7 @@ def cached_embedding(text):
     """缓存Embedding结果"""
     return embeddings.embed_query(text)
 
-##### 对于相同的问题，直接返回缓存
+# 对于相同的问题，直接返回缓存
 def cached_answer(question):
     question_hash = hash(question)
     if question_hash in answer_cache:
@@ -710,7 +710,7 @@ def cached_answer(question):
 **优化4：使用更快的模型**
 
 ```python
-##### 根据任务复杂度选择模型
+# 根据任务复杂度选择模型
 def smart_model_selection(task):
     if task == "简单分类":
         return "gpt-4.1-nano"  # 快且便宜
@@ -731,7 +731,7 @@ async def parallel_tool_calls(tools, query):
     results = await asyncio.gather(*tasks)
     return results
 
-##### 用法
+# 用法
 async def agent_loop(query):
     # 同时发起多个独立的工具调用
     weather, news, time = await parallel_tool_calls(
@@ -742,13 +742,13 @@ async def agent_loop(query):
 
 ---
 
-#### 11.6 工具调用异常：容错设计与fallback策略
+## 11.6 工具调用异常：容错设计与fallback策略
 
-###### 工具调用为什么容易出错？
+### 工具调用为什么容易出错？
 
 因为工具涉及**外部依赖**：网络、API服务、数据库...任何一个环节出问题，整个Agent就卡住了。
 
-###### 异常分类
+### 异常分类
 
 | 异常类型 | 示例 | 是否可重试 |
 |---------|------|-----------|
@@ -759,7 +759,7 @@ async def agent_loop(query):
 | 服务不可用 | 503 Service Unavailable | ✅ |
 | 资源不存在 | 404 Not Found | ❌ |
 
-###### 指数退避重试策略
+### 指数退避重试策略
 
 ```python
 import time
@@ -781,7 +781,7 @@ async def call_api_with_retry(url: str, params: dict):
         return response.json()
 ```
 
-###### Fallback链设计
+### Fallback链设计
 
 ```python
 class ToolWithFallback:
@@ -812,7 +812,7 @@ class ToolWithFallback:
         # 3. 都失败了
         return {"source": "none", "result": None, "error": "所有工具都不可用"}
 
-##### 使用示例：搜索工具的Fallback
+# 使用示例：搜索工具的Fallback
 search_tool = ToolWithFallback(
     primary_tool=GoogleSearchTool(),
     fallback_tools=[
@@ -823,7 +823,7 @@ search_tool = ToolWithFallback(
 )
 ```
 
-###### 将错误反馈给模型
+### 将错误反馈给模型
 
 关键是让模型**感知错误并自主修复**，而不是直接崩溃：
 
@@ -880,7 +880,7 @@ class SelfHealingAgent:
         return suggestions.get(type(error).__name__, "请重新尝试")
 ```
 
-###### 优雅降级策略
+### 优雅降级策略
 
 当所有工具都失败时，提供**有价值的降级体验**：
 
@@ -916,9 +916,9 @@ def graceful_degradation(query, error_context):
 
 ---
 
-#### 11.7 把排坑经验变成面试加分项
+## 11.7 把排坑经验变成面试加分项
 
-###### 为什么排坑经验值钱？
+### 为什么排坑经验值钱？
 
 因为它证明了两件事：
 
@@ -927,7 +927,7 @@ def graceful_degradation(query, error_context):
 
 面试官最怕的就是"只看过教程，没实战过"的候选人。
 
-###### 如何在简历中展示
+### 如何在简历中展示
 
 **❌ 普通写法**
 
@@ -944,7 +944,7 @@ def graceful_degradation(query, error_context):
 - 实现Agent的容错机制，包含指数退避重试和Fallback链，线上故障率降低60%
 ```
 
-###### 如何在面试中讲
+### 如何在面试中讲
 
 准备几个"排坑故事"，用STAR法则：
 
@@ -961,7 +961,7 @@ def graceful_degradation(query, error_context):
 
 > "Agent上线后，偶尔会陷入重复调用同一个工具的死循环。我加了一个循环检测器，统计最近N次的工具调用序列，如果连续相同就终止。同时还实现了Fallback机制，主工具失败时自动切换备选，把线上故障率从15%降到了2%。"
 
-###### 常见面试题与应答
+### 常见面试题与应答
 
 **Q：RAG系统的检索效果不好，你怎么排查？**
 
@@ -1001,7 +1001,7 @@ A：先定位瓶颈在哪：
 
 ---
 
-#### 行动清单
+## 行动清单
 
 学完这章，你至少应该做这几件事：
 

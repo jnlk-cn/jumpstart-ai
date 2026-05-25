@@ -4,93 +4,78 @@ layout: home
 hero:
   name: "AI 앱 개발 실전"
   text: "먼저 타라, 나중에 배워라"
-  tagline: "8주 입문 가이드 | 제로부터 AI 앱 개발자까지"
+  tagline: "AI 애플리케이션 개발에 뛰어드는 가장 빠른 방법"
+  image:
+    src: /hero-illustration.svg
+    alt: AI 애플리케이션 개발
   actions:
     - theme: brand
-      text: 읽기 시작 →
-      link: /ko/part1-cognition/
+      text: 읽기 시작
+      link: /ko/chapter1
     - theme: alt
-      text: 빠른 내비게이션
-      link: /ko/part1-cognition/chapter1
-  image:
-    src: /logo.svg
-    alt: Jumpstart AI
+      text: 🇨🇳 简体中文
+      link: /zh/
+    - theme: alt
+      text: 🇬🇧 English
+      link: /en/
+    - theme: alt
+      text: 🇯🇵 日本語
+      link: /ja/
 
 features:
   - icon: 🚀
-    title: 먼저 행동, 나중에 준비
-    details: " '들어가기 전에 준비하자'는 사고방식을 깨뜨리세요. AI 분야는 변화가 빠릅니다."
+    title: 실습 중심
+    details: 첫날부터 실제 프로젝트로 배우기
   - icon: 🎯
-    title: 실전 중심
-    details: 모든 챕터에는 바로 적용할 수 있는 실전 기술이 담겨 있습니다.
-  - icon: 🗺️
-    title: 명확한 로드맵
-    details: 인지, 기초, 실전, 고급, 취업까지 완벽한 학습 경로.
-  - icon: 💼
-    title: 취업 지원
-    details: 이력서 작성, 면접 준비, 입사 적응까지 전 과정 지원.
-  - icon: 🌏
-    title: 4개국어 지원
-    details: 중국어, 영어, 일본어, 한국어 완벽 지원.
-  - icon: 🌙
-    title: 다크 모드
-    details: 라이트/다크 모드 전환으로 눈을 보호하세요.
-
+    title: 커리어 로드맵
+    details: 초보에서 AI 개발자로 가는 명확한 길
+  - icon: 💡
+    title: 먼저 뛰어들기
+    details: 실습으로 학습 장벽 돌파
+  - icon: 🔧
+    title: 도구 참조
+    details: 빠른 조회가 가능한 완전한 도구 키트
+  - icon: 📚
+    title: 체계적 학습
+    details: 기초부터 고급까지 단계적 기술 구축
+  - icon: 🎤
+    title: 면접 준비
+    details: 실제 면접 질문과 답변
 ---
 
-<div class="multi-language-title">
+<div class="language-banner">
 
-## 🇨🇳 中文
-**AI应用开发入行实战：先上车后补票**
+## 🌐 다국어 버전
 
-## 🇬🇧 English
-**Jumpstart AI: Build First, Learn As You Go**
+| 언어 | 서명 | 상태 |
+|:---:|:---|:---:|
+| 🇨🇳 简体中文 | AI应用开发入行实战：先上车后补票 | ✅ 전체版 |
+| 🇬🇧 English | Jumpstart AI: Build First, Learn As You Go | 🔄 번역 중 |
+| 🇯🇵 日本語 | AIアプリ開発実践：まず乗れ、後で学べ | 🔄 翻訳中 |
+| 🇰🇷 한국어 | AI 앱 개발 실전: 먼저 타라, 나중에 배워라 | 🔄 번역 중 |
 
-## 🇯🇵 日本語
-**AIアプリ開発実践：まず乗れ、後で学べ**
+</div>
 
-## 🇰🇷 한국어
-**AI 앱 개발 실전: 먼저 타라, 나중에 배워라**
+<div class="translation-notice">
+
+> 📝 **번역 안내**: 챕터 요약 및 내비게이션은 번역되었습니다. 본문 번역은 순차적으로 진행 중입니다.
 
 </div>
 
 <style>
-.multi-language-title {
-  text-align: center;
-  padding: 3rem 1rem;
+.language-banner {
+  margin-top: 3rem;
+  padding: 1.5rem;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  border-radius: 16px;
-  margin: 2rem 0;
+  border-radius: 12px;
   color: white;
 }
 
-.multi-language-title h3 {
-  font-size: 1.3rem;
-  margin: 0.8rem 0;
-  color: white;
-  font-weight: 600;
-}
-
-.VPHome {
-  background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
-}
-
-.dark .VPHome {
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-}
-
-.VPHero .name {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-size: 3.5rem;
-}
-
-.dark .VPHero .name {
-  background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+.translation-notice {
+  margin-top: 2rem;
+  padding: 1rem;
+  background: #fef3c7;
+  border-left: 4px solid #f59e0b;
+  border-radius: 8px;
 }
 </style>

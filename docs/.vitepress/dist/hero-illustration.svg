@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="800" height="400">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f5f7fa;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e4e8f0;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="aiGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="400" fill="url(#bgGrad)" rx="20"/>
+  
+  <!-- AI Brain Icon -->
+  <g transform="translate(300, 100)">
+    <circle cx="100" cy="80" r="70" fill="url(#aiGrad)" opacity="0.9"/>
+    <text x="100" y="75" text-anchor="middle" fill="white" font-size="32" font-weight="bold" font-family="Arial, sans-serif">AI</text>
+    <text x="100" y="105" text-anchor="middle" fill="white" font-size="16" font-family="Arial, sans-serif">应用开发</text>
+    
+    <!-- Connection dots -->
+    <circle cx="30" cy="80" r="8" fill="#667eea" opacity="0.7"/>
+    <circle cx="170" cy="80" r="8" fill="#667eea" opacity="0.7"/>
+    <circle cx="100" cy="20" r="8" fill="#667eea" opacity="0.7"/>
+    <circle cx="100" cy="150" r="8" fill="#667eea" opacity="0.7"/>
+    
+    <!-- Connection lines -->
+    <line x1="30" y1="80" x2="100" y2="80" stroke="#667eea" stroke-width="2" opacity="0.5"/>
+    <line x1="170" y1="80" x2="100" y2="80" stroke="#667eea" stroke-width="2" opacity="0.5"/>
+    <line x1="100" y1="20" x2="100" y2="80" stroke="#667eea" stroke-width="2" opacity="0.5"/>
+    <line x1="100" y1="150" x2="100" y2="80" stroke="#667eea" stroke-width="2" opacity="0.5"/>
+  </g>
+  
+  <!-- Text -->
+  <text x="400" y="320" text-anchor="middle" fill="#1f2937" font-size="24" font-weight="bold" font-family="Arial, sans-serif">先上车后补票 | Build First, Learn As You Go</text>
+  
+  <!-- Decorative elements -->
+  <circle cx="100" cy="50" r="15" fill="#667eea" opacity="0.3"/>
+  <circle cx="700" cy="350" r="20" fill="#764ba2" opacity="0.3"/>
+  <circle cx="650" cy="80" r="10" fill="#667eea" opacity="0.4"/>
+  <circle cx="150" cy="350" r="12" fill="#764ba2" opacity="0.4"/>
+</svg>

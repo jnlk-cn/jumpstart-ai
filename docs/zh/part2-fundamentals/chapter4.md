@@ -1,10 +1,10 @@
 ---
-outline: deep
+outline: [2, 3]
 ---
 
-##### 第4章 Python与工程基础：AI开发的瑞士军刀
+# 第4章 Python与工程基础：AI开发的瑞士军刀
 
-#### 本章你能带走什么
+## 本章你能带走什么
 
 欢迎来到"真刀真枪"的基础篇。
 
@@ -30,9 +30,9 @@ outline: deep
 
 ---
 
-#### 4.1 Python核心速通：从"会写"到"会用"
+## 4.1 Python核心速通：从"会写"到"会用"
 
-###### 先说实话：AI开发到底在写什么代码
+### 先说实话：AI开发到底在写什么代码
 
 在开始之前，你得先知道一件事：**AI应用开发的代码，80%不是在写"AI"，而是在写"胶水"**。
 
@@ -47,7 +47,7 @@ outline: deep
 
 所以这一节的目标很明确：**让你用最快的速度，掌握AI开发中最高频的Python模式**。
 
-###### dataclass：AI代码里的"数据容器"
+### dataclass：AI代码里的"数据容器"
 
 你在AI代码里见过这种写法吗？
 
@@ -70,7 +70,7 @@ class Document:
 为什么不用普通类？看看对比：
 
 ```python
-##### ❌ 普通类的写法——冗长、啰嗦
+# ❌ 普通类的写法——冗长、啰嗦
 class Document:
     def __init__(self, content: str, metadata: dict = None):
         self.content = content
@@ -79,7 +79,7 @@ class Document:
     def __repr__(self):
         return f"Document(content={self.content[:20]}...)"
 
-##### ✅ dataclass的写法——简洁、自动生成__repr__和__eq__
+# ✅ dataclass的写法——简洁、自动生成__repr__和__eq__
 @dataclass
 class Document:
     content: str
@@ -188,7 +188,7 @@ class EmbeddingPipeline:
         return chunks
 ```
 
-###### pydantic：数据校验的利器
+### pydantic：数据校验的利器
 
 如果说dataclass是"数据容器"，那pydantic就是"带校验的数据容器"。
 
@@ -256,7 +256,7 @@ class ChatCompletionResponse(BaseModel):
         """Pydantic配置"""
         str_strip_whitespace = True
 
-##### 使用示例
+# 使用示例
 response_data = {
     "id": "chatcmpl-123",
     "model": "gpt-4o-mini",
@@ -265,14 +265,14 @@ response_data = {
     "created": 1700000000
 }
 
-##### 解析并校验——如果数据格式不对，直接报错
+# 解析并校验——如果数据格式不对，直接报错
 response = ChatCompletionResponse(**response_data)
 print(response.usage.total_tokens)  # 15，直接拿到int类型
 ```
 
 **pydantic的实战价值**：当你在写一个AI Agent，处理来自不同来源的数据时，pydantic能让你清晰地定义"我期望的数据长什么样"，而不是到处写`if isinstance(x, str)`的判断。
 
-###### f-string与字符串处理：Prompt工程的主战场
+### f-string与字符串处理：Prompt工程的主战场
 
 AI开发80%的时间在跟字符串打交道——写Prompt、解析响应、拼接模板。f-string是Python 3.6+最推荐的字符串格式化方式：
 
@@ -280,21 +280,21 @@ AI开发80%的时间在跟字符串打交道——写Prompt、解析响应、拼
 name = "小明"
 age = 28
 
-##### ✅ f-string——简洁、可读
+# ✅ f-string——简洁、可读
 greeting = f"你好，{name}！你{age}岁了。"
 
-##### ✅ 支持表达式
+# ✅ 支持表达式
 result = f"10年后的年龄是 {age + 10} 岁"
 
-##### ✅ 支持调用方法
+# ✅ 支持调用方法
 text = "Hello World"
 print(f"大写: {text.upper()}, 长度: {len(text)}")
 
-##### ✅ 复杂格式（字典/对象属性）
+# ✅ 复杂格式（字典/对象属性）
 user = {"name": "张三", "score": 95.678}
 print(f"用户: {user['name']}, 分数: {user['score']:.2f}")  # 分数: 95.68
 
-##### ✅ 多行f-string（写Prompt的必备技能）
+# ✅ 多行f-string（写Prompt的必备技能）
 system_prompt = f"""
 你是一个专业的AI助手。
 
@@ -311,31 +311,31 @@ system_prompt = f"""
 **AI开发中的字符串陷阱**：
 
 ```python
-##### ❌ 陷阱1：多行字符串的缩进问题
+# ❌ 陷阱1：多行字符串的缩进问题
 sql = f"""
 SELECT * FROM users
 WHERE name = '{username}'  # 如果username是 "Bob'; DROP TABLE users; --"
 """
-##### 这就是经典的SQL注入漏洞！
+# 这就是经典的SQL注入漏洞！
 
-##### ✅ 正确做法：用参数化查询
+# ✅ 正确做法：用参数化查询
 sql = f"SELECT * FROM users WHERE name = ?"
 cursor.execute(sql, (username,))
 
-##### ❌ 陷阱2：JSON中的单引号
+# ❌ 陷阱2：JSON中的单引号
 data = f'{{"name": "{name}"}}'  # 容易出错
 
-##### ✅ 正确做法：用json.dumps或dataclass
+# ✅ 正确做法：用json.dumps或dataclass
 import json
 data = json.dumps({"name": name, "content": content})
 
-##### ✅ 陷阱3：Unicode转义
+# ✅ 陷阱3：Unicode转义
 content = "你好\n再见"
-##### 如果要把这个存入JSON，需要ensure_ascii=False
+# 如果要把这个存入JSON，需要ensure_ascii=False
 json_str = json.dumps({"text": content}, ensure_ascii=False)
 ```
 
-###### 类型注解：让AI帮你写代码
+### 类型注解：让AI帮你写代码
 
 类型注解（Type Hints）是Python 3.5+引入的特性。虽然Python是动态类型语言，但加上类型注解后：
 
@@ -346,14 +346,14 @@ json_str = json.dumps({"text": content}, ensure_ascii=False)
 ```python
 from typing import List, Dict, Optional, Union, Callable, TypeVar
 
-##### 基础类型注解
+# 基础类型注解
 def process_text(text: str, max_length: int = 200) -> str:
     """处理文本，返回截断后的内容"""
     if len(text) > max_length:
         return text[:max_length] + "..."
     return text
 
-##### 复杂类型
+# 复杂类型
 def batch_process(
     items: List[Dict[str, str]],
     processor: Callable[[Dict[str, str]], str]
@@ -361,7 +361,7 @@ def batch_process(
     """批量处理数据"""
     return [processor(item) for item in items]
 
-##### Union和Optional
+# Union和Optional
 def parse_score(value: Union[str, int, float]) -> Optional[float]:
     """解析分数"""
     try:
@@ -369,7 +369,7 @@ def parse_score(value: Union[str, int, float]) -> Optional[float]:
     except (ValueError, TypeError):
         return None
 
-##### 泛型
+# 泛型
 T = TypeVar('T')
 
 def find_first(predicate: Callable[[T], bool], items: List[T]) -> Optional[T]:
@@ -379,7 +379,7 @@ def find_first(predicate: Callable[[T], bool], items: List[T]) -> Optional[T]:
             return item
     return None
 
-##### AI开发中的典型场景：向量数据库的结果类型
+# AI开发中的典型场景：向量数据库的结果类型
 from dataclasses import dataclass
 
 @dataclass
@@ -404,14 +404,14 @@ def search(
 **类型注解的最佳实践**：
 
 ```python
-##### ✅ 用typing模块，不用手写
-##### ❌ def foo(x: list, y: dict): ...
-##### ✅ def foo(x: List[str], y: Dict[str, int]): ...
+# ✅ 用typing模块，不用手写
+# ❌ def foo(x: list, y: dict): ...
+# ✅ def foo(x: List[str], y: Dict[str, int]): ...
 
-##### ✅ Optional[X] 等价于 Union[X, None]
-##### ✅ def foo(x: Optional[str]) -> Optional[str]: ...
+# ✅ Optional[X] 等价于 Union[X, None]
+# ✅ def foo(x: Optional[str]) -> Optional[str]: ...
 
-##### ✅ 类型别名让代码更易读
+# ✅ 类型别名让代码更易读
 Embeddings = List[List[float]]
 TokenCount = int
 
@@ -419,7 +419,7 @@ def embed_texts(texts: List[str]) -> Embeddings:
     ...
 ```
 
-###### 异常处理：让你的代码"优雅地失败"
+### 异常处理：让你的代码"优雅地失败"
 
 AI代码里，异常处理特别重要——网络可能不稳定、API可能限流、模型可能返回格式错误的数据。
 
@@ -507,7 +507,7 @@ def call_api_with_retry(
     
     raise last_error  # 抛出最后一次的错误
 
-##### 使用模式
+# 使用模式
 try:
     result = call_api_with_retry(url, payload)
     # 处理结果
@@ -522,7 +522,7 @@ except APIError as e:
     # 记录日志、告警等
 ```
 
-###### 实战：一个完整的AI数据处理Pipeline
+### 实战：一个完整的AI数据处理Pipeline
 
 把上面的知识点串起来：
 
@@ -540,14 +540,14 @@ import json
 import hashlib
 import logging
 
-##### 配置日志
+# 配置日志
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
 )
 logger = logging.getLogger(__name__)
 
-##### ============== 数据模型 ==============
+# ============== 数据模型 ==============
 
 @dataclass
 class RawDocument:
@@ -584,7 +584,7 @@ class EmbeddingRecord:
     embedding: List[float]
     model: str
 
-##### ============== 接口定义 ==============
+# ============== 接口定义 ==============
 
 class TextSplitter(Protocol):
     """文本切分器协议"""
@@ -601,7 +601,7 @@ class VectorStore(Protocol):
     def add(self, records: List[EmbeddingRecord]) -> None: ...
     def search(self, query: str, k: int) -> List[TextChunk]: ...
 
-##### ============== Pipeline实现 ==============
+# ============== Pipeline实现 ==============
 
 class DocumentPipeline:
     """文档处理流水线"""
@@ -665,7 +665,7 @@ class DocumentPipeline:
         
         return self.process(docs)
 
-##### ============== 具体实现示例 ==============
+# ============== 具体实现示例 ==============
 
 class SimpleTextSplitter:
     """简单的按段落切分"""
@@ -719,7 +719,7 @@ class SimpleTextSplitter:
         
         return chunks
 
-##### ============== 使用示例 ==============
+# ============== 使用示例 ==============
 
 def main():
     # 模拟的组件
@@ -763,9 +763,9 @@ if __name__ == "__main__":
 
 ---
 
-#### 4.2 HTTP接口与JSON：大模型API调用的正确姿势
+## 4.2 HTTP接口与JSON：大模型API调用的正确姿势
 
-###### 为什么HTTP对AI开发如此重要
+### 为什么HTTP对AI开发如此重要
 
 现在的AI应用，本质上是一个"客户端-服务器"架构：
 
@@ -775,36 +775,36 @@ if __name__ == "__main__":
 
 你用的LangChain、AutoGen、任何Agent框架，底层都是这个模式。所以**理解HTTP + JSON，是调试AI代码、排查问题的必备技能**。
 
-###### requests vs httpx：同步与异步
+### requests vs httpx：同步与异步
 
 Python里最常用的HTTP库有两个：`requests`（同步，简单直接）和`httpx`（支持异步，功能更强）。
 
 ```python
 import requests  # 同步库，最常用
 
-##### 最简单的GET请求
+# 最简单的GET请求
 response = requests.get("https://api.example.com/users/123")
 
-##### 带参数
+# 带参数
 response = requests.get(
     "https://api.example.com/search",
     params={"query": "Python", "page": 1}
 )
 
-##### POST请求（AI开发最常用）
+# POST请求（AI开发最常用）
 response = requests.post(
     "https://api.example.com/analyze",
     json={"text": "待分析的文本", "language": "zh"}
 )
 
-##### 带Header（API认证必需）
+# 带Header（API认证必需）
 headers = {
     "Authorization": "Bearer sk-xxxx",
     "Content-Type": "application/json"
 }
 response = requests.post(url, headers=headers, json=payload)
 
-##### 检查响应
+# 检查响应
 if response.status_code == 200:
     data = response.json()  # 解析JSON
 else:
@@ -815,7 +815,7 @@ else:
 当你需要**同时调用多个API**（比如批量生成、批量嵌入），同步方式就太慢了：
 
 ```python
-##### ❌ 同步方式：串行执行，10个API调用要等很久
+# ❌ 同步方式：串行执行，10个API调用要等很久
 results = []
 for text in texts:
     result = call_openai(text)  # 每次都要等
@@ -868,7 +868,7 @@ async def batch_call_openai(prompts: List[str]) -> List[str]:
         
         return final_results
 
-##### 使用
+# 使用
 prompts = [f"任务{i}: 请总结以下内容..." for i in range(10)]
 results = asyncio.run(batch_call_openai(prompts))
 ```
@@ -877,7 +877,7 @@ results = asyncio.run(batch_call_openai(prompts))
 - 同步：10个API调用，每个2秒，总共20秒+
 - 异步：10个API调用同时进行，总共2秒+
 
-###### 流式输出：让AI"打字"给你看
+### 流式输出：让AI"打字"给你看
 
 ChatGPT那种一个字一个字出来的效果，叫"流式输出"（Streaming）。这需要特殊的HTTP处理方式：
 
@@ -919,11 +919,11 @@ async def stream_chat(prompt: str):
                         continue
             print()  # 换行
 
-##### 运行
+# 运行
 asyncio.run(stream_chat("用一句话解释量子计算"))
 ```
 
-###### 健壮的AI API客户端：生产级代码
+### 健壮的AI API客户端：生产级代码
 
 下面是一个**可直接用于生产**的AI API客户端示例：
 
@@ -1260,7 +1260,7 @@ class AIAPIClient:
             "estimated_cost": self.total_cost
         }
 
-##### ============== 使用示例 ==============
+# ============== 使用示例 ==============
 
 async def main():
     # 创建客户端
@@ -1306,9 +1306,9 @@ if __name__ == "__main__":
 
 ---
 
-#### 4.3 Git与协作：AI开发团队的代码组织
+## 4.3 Git与协作：AI开发团队的代码组织
 
-###### 先吐槽：为什么你的GitHub看起来像网盘
+### 先吐槽：为什么你的GitHub看起来像网盘
 
 我见过太多人的GitHub长这样：
 - 一个仓库叫"AI学习资料"
@@ -1319,7 +1319,7 @@ if __name__ == "__main__":
 
 Git的真正价值不是"存代码"，而是**协作**。下面这些才是正经团队在用的Git姿势。
 
-###### monorepo：AI项目的代码组织方式
+### monorepo：AI项目的代码组织方式
 
 大厂AI项目通常用"monorepo"（单一仓库）：
 
@@ -1347,7 +1347,7 @@ ai-company/
 - **统一版本**：不会有"我的numpy是1.24，你的numpy是1.26"的问题
 - **方便Code Review**：所有改动在一个仓库里review
 
-###### pre-commit hooks：提交前的自动检查
+### pre-commit hooks：提交前的自动检查
 
 你有没有遇到过：
 - 提交了包含`print("debug")`的代码
@@ -1357,7 +1357,7 @@ ai-company/
 `pre-commit hooks`就是来解决这个问题的——**在代码提交之前自动检查**，不合格就不让提交。
 
 ```yaml
-##### .pre-commit-config.yaml
+# .pre-commit-config.yaml
 
 repos:
   # 检查代码格式
@@ -1411,15 +1411,15 @@ pre-commit install  # 安装git hooks
 
 现在每次`git commit`都会自动运行这些检查。
 
-###### .env安全管理：API Key怎么管
+### .env安全管理：API Key怎么管
 
 **绝对禁止**把API Key写进代码里：
 
 ```python
-##### ❌ 错误：Key直接写在代码里
+# ❌ 错误：Key直接写在代码里
 api_key = "sk-xxxxx123456789"
 
-##### ✅ 正确：从环境变量读取
+# ✅ 正确：从环境变量读取
 import os
 api_key = os.environ.get("OPENAI_API_KEY")
 ```
@@ -1431,24 +1431,24 @@ api_key = os.environ.get("OPENAI_API_KEY")
 **正确做法**：
 
 ```bash
-##### .env 文件（不提交到Git！）
+# .env 文件（不提交到Git！）
 OPENAI_API_KEY=sk-xxxxx123456789
 ANTHROPIC_API_KEY=sk-ant-xxxxx
 DATABASE_URL=postgresql://...
 
-##### .gitignore 添加
+# .gitignore 添加
 .env
 .env.local
 .env.*.local
 ```
 
 ```python
-##### config.py
+# config.py
 from pathlib import Path
 from dotenv import load_dotenv
 import os
 
-##### 加载.env文件
+# 加载.env文件
 env_path = Path(__file__).parent / ".env"
 if env_path.exists():
     load_dotenv(env_path)
@@ -1481,38 +1481,38 @@ class Config:
         if missing:
             raise ValueError(f"缺少必要配置: {missing}")
 
-##### 使用
+# 使用
 from config import Config
 Config.validate()
 client = OpenAI(api_key=Config.OPENAI_API_KEY)
 ```
 
-###### Git Flow：团队协作的标准流程
+### Git Flow：团队协作的标准流程
 
 AI团队的协作流程通常是：
 
 ```bash
-##### 1. 每天开始工作：同步最新代码
+# 1. 每天开始工作：同步最新代码
 git checkout main
 git pull origin main
 
-##### 2. 创建自己的分支（基于main）
+# 2. 创建自己的分支（基于main）
 git checkout -b feature/vector-search-optimization
 
-##### 3. 开发...
-##### 写代码
+# 3. 开发...
+# 写代码
 git add .
 git commit -m "feat: 优化向量检索的批量处理逻辑"
 
-##### 4. 推送前先拉取最新main（防止冲突）
+# 4. 推送前先拉取最新main（防止冲突）
 git fetch origin
 git rebase origin/main  # 变基，保持提交历史整洁
 
-##### 5. 推送
+# 5. 推送
 git push origin feature/vector-search-optimization
 
-##### 6. 在GitHub上创建Pull Request
-##### 7. Code Review通过后，合并到main
+# 6. 在GitHub上创建Pull Request
+# 7. Code Review通过后，合并到main
 ```
 
 **Commit Message规范**（让团队协作更清晰）：
@@ -1532,12 +1532,12 @@ fix: 修复RAG检索时token超限的问题
 refactor: 重构API客户端的异常处理逻辑
 ```
 
-###### 代码审查：AI代码怎么Review
+### 代码审查：AI代码怎么Review
 
 AI代码的Review有几个特别需要注意的点：
 
 ```python
-##### 1. 检查Prompt注入风险
+# 1. 检查Prompt注入风险
 def query_with_context(user_query: str, context: str):
     """
     ❌ 危险：用户输入直接拼接进Prompt
@@ -1552,62 +1552,62 @@ def query_with_context(user_query: str, context: str):
     """
     # 使用单独的字段，或者在Prompt层面限制user字段的权限
 
-##### 2. 检查API Key使用
-##### ❌ if api_key.startswith("sk-"):
-##### ✅ 使用更严格的校验
+# 2. 检查API Key使用
+# ❌ if api_key.startswith("sk-"):
+# ✅ 使用更严格的校验
 
-##### 3. 检查成本控制
-##### ✅ 是否有max_tokens限制
-##### ✅ 是否有并发限制防止滥用
+# 3. 检查成本控制
+# ✅ 是否有max_tokens限制
+# ✅ 是否有并发限制防止滥用
 
-##### 4. 检查敏感信息处理
-##### ✅ 用户输入的文本是否被正确处理
-##### ✅ 错误信息是否会泄露内部实现
+# 4. 检查敏感信息处理
+# ✅ 用户输入的文本是否被正确处理
+# ✅ 错误信息是否会泄露内部实现
 ```
 
 **Git小结**：Git不是"备份工具"，是"协作工具"。学会用分支、用Pull Request、用pre-commit，比会`git add`和`git commit`重要一百倍。
 
 ---
 
-#### 4.4 命令行与Linux：AI开发者的日常
+## 4.4 命令行与Linux：AI开发者的日常
 
-###### 场景一：SSH到服务器
+### 场景一：SSH到服务器
 
 作为AI开发者，你大概率要跟GPU服务器打交道。服务器通常是Linux，没有图形界面，全靠命令行。
 
 ```bash
-##### 基本连接
+# 基本连接
 ssh username@server_ip
 
-##### 指定端口
+# 指定端口
 ssh -p 2222 username@server_ip
 
-##### 使用密钥登录（更安全）
+# 使用密钥登录（更安全）
 ssh -i ~/.ssh/my_key.pem username@server_ip
 
-##### 保持连接不断（远程服务器操作必备）
+# 保持连接不断（远程服务器操作必备）
 ssh -o ServerAliveInterval=60 username@server_ip
 ```
 
-###### 场景二：查看和管理进程
+### 场景二：查看和管理进程
 
 ```bash
-##### 查看所有Python进程
+# 查看所有Python进程
 ps aux | grep python
 ps aux | grep "python.*app.py"
 
-##### 实时查看CPU/内存占用
+# 实时查看CPU/内存占用
 top
 htop  # 更友好，需要安装
 
-##### 查看GPU使用情况（AI必备！）
+# 查看GPU使用情况（AI必备！）
 nvidia-smi
 watch -n 1 nvidia-smi  # 每秒刷新一次
 
-##### 强制终止进程
+# 强制终止进程
 kill -9 PID  # PID是进程ID
 
-##### 查看端口占用
+# 查看端口占用
 netstat -tlnp | grep 8000
 lsof -i :8000
 ```
@@ -1633,24 +1633,24 @@ lsof -i :8000
 - **Memory-Usage**：显存占用，AI训练/推理时接近100%
 - **Temp**：温度，过高需要检查散热
 
-###### 场景三：查看日志
+### 场景三：查看日志
 
 日志是调试AI应用的第一手资料：
 
 ```bash
-##### 查看日志最后100行
+# 查看日志最后100行
 tail -n 100 /var/log/app.log
 
-##### 实时查看日志（新内容自动显示）
+# 实时查看日志（新内容自动显示）
 tail -f /var/log/app.log
 
-##### 查看日志并高亮关键词
+# 查看日志并高亮关键词
 tail -f app.log | grep -E "ERROR|WARN"
 
-##### 统计关键词出现次数
+# 统计关键词出现次数
 grep -c "ERROR" app.log
 
-##### 查看某个时间段的日志
+# 查看某个时间段的日志
 sed -n '/2024-01-15 10:00:00/,/2024-01-15 11:00:00/p' app.log
 ```
 
@@ -1660,7 +1660,7 @@ sed -n '/2024-01-15 10:00:00/,/2024-01-15 11:00:00/p' app.log
 import logging
 from logging.handlers import RotatingFileHandler
 
-##### 配置日志
+# 配置日志
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -1678,85 +1678,85 @@ logging.basicConfig(
 
 logger = logging.getLogger(__name__)
 
-##### AI开发中的典型日志
+# AI开发中的典型日志
 logger.info(f"开始处理文档: {doc_id}")
 logger.info(f"向量化完成，耗时: {elapsed:.2f}s")
 logger.warning(f"API调用失败，准备重试: {attempt}/3")
 logger.error(f"向量数据库连接失败: {error}")
 ```
 
-###### 场景四：tmux——SSH断开也不怕
+### 场景四：tmux——SSH断开也不怕
 
 最讨厌的场景：SSH连着服务器跑训练，突然断网了，任务也断了。
 
 **tmux**就是来解决这个问题的——它让你"断开连接但程序继续跑"。
 
 ```bash
-##### 创建命名会话
+# 创建命名会话
 tmux new -s training
 
-##### 在tmux里启动训练
+# 在tmux里启动训练
 python train.py
 
-##### 按 Ctrl+b 然后按 d，断开会话（程序继续跑）
-##### 终端关了也没关系！
+# 按 Ctrl+b 然后按 d，断开会话（程序继续跑）
+# 终端关了也没关系！
 
-##### 回家后重新连接
+# 回家后重新连接
 tmux attach -t training
 
-##### 查看所有会话
+# 查看所有会话
 tmux ls
 
-##### 关闭会话
+# 关闭会话
 tmux kill-session -t training
 ```
 
 **tmux高级技巧**：
 
 ```bash
-##### 分屏：水平分
+# 分屏：水平分
 Ctrl+b "
 
-##### 分屏：垂直分
+# 分屏：垂直分
 Ctrl+b %
 
-##### 切换面板
+# 切换面板
 Ctrl+b 方向键
 
-##### 发送命令到所有面板（同时监控多个任务）
+# 发送命令到所有面板（同时监控多个任务）
 Ctrl+b :setw synchronize-panes on
 ```
 
-###### 场景五：Docker——环境一致的保障
+### 场景五：Docker——环境一致的保障
 
 "在我电脑上能跑，服务器上就不行"——Docker解决了这个问题：
 
 ```bash
-##### 常用命令速查
+# 常用命令速查
 
-##### 查看运行中的容器
+# 查看运行中的容器
 docker ps
 
-##### 查看所有容器（包括已停止的）
+# 查看所有容器（包括已停止的）
 docker ps -a
 
-##### 构建镜像
+# 构建镜像
 docker build -t my-ai-app:latest .
 
-##### 运行容器
+# 运行容器
 docker run -d -p 8000:8000 --name ai-service my-ai-app:latest
 
-##### 进入容器（调试用）
+# 进入容器（调试用）
 docker exec -it ai-service bash
 
-##### 查看日志
+# 查看日志
 docker logs -f ai-service
 
-##### 停止/删除
+# 停止/删除
 docker stop ai-service
 docker rm ai-service
 
-##### GPU支持（NVIDIA Container Toolkit）
+# GPU支持（NVIDIA Container Toolkit）
 docker run --gpus all -d -p 8000:8000 my-ai-app:latest
 ```
 
@@ -1767,14 +1767,14 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
-##### 先复制依赖文件（利用缓存）
+# 先复制依赖文件（利用缓存）
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-##### 再复制代码
+# 再复制代码
 COPY . .
 
-##### 运行
+# 运行
 CMD ["python", "app.py"]
 ```
 
@@ -1782,9 +1782,9 @@ CMD ["python", "app.py"]
 
 ---
 
-#### 4.5 环境管理：2026年的最佳实践
+## 4.5 环境管理：2026年的最佳实践
 
-###### 为什么要环境管理
+### 为什么要环境管理
 
 先讲个恐怖故事：
 
@@ -1802,7 +1802,7 @@ CMD ["python", "app.py"]
 
 **环境管理的目的**：让每个项目有独立的"Python小世界"，互不干扰。
 
-###### 三国争霸：venv / conda / uv
+### 三国争霸：venv / conda / uv
 
 2026年了，这三个工具该怎么选？
 
@@ -1817,7 +1817,7 @@ CMD ["python", "app.py"]
 - 数据科学/GPU训练：conda（miniconda够用，别装完整版）
 - **新项目/团队协作**：uv（2026年的最优解）
 
-###### uv凭什么这么火
+### uv凭什么这么火
 
 `uv`是2023年发布的Python包管理工具，作者是Rust的核心开发者。它的核心优势：
 
@@ -1826,29 +1826,29 @@ CMD ["python", "app.py"]
 3. **兼容**：完全兼容pip和requirements.txt
 
 ```bash
-##### 安装uv（一条命令）
+# 安装uv（一条命令）
 curl -LsSf https://astral.sh/uv/install.sh | sh
 
-##### 或者用pip安装
+# 或者用pip安装
 pip install uv
 
-##### 创建虚拟环境（同时安装Python）
+# 创建虚拟环境（同时安装Python）
 uv venv --python 3.12 myenv
 
-##### 激活（跟venv一样）
+# 激活（跟venv一样）
 source myenv/bin/activate
 
-##### 安装依赖
+# 安装依赖
 uv pip install openai langchain fastapi
 
-##### 从requirements.txt安装
+# 从requirements.txt安装
 uv pip install -r requirements.txt
 
-##### 同步依赖（跟pyproject.toml配合）
+# 同步依赖（跟pyproject.toml配合）
 uv pip sync pyproject.toml
 ```
 
-###### pyproject.toml：依赖的"现代标准"
+### pyproject.toml：依赖的"现代标准"
 
 `requirements.txt`是旧时代的产物，问题一堆：
 - 不支持嵌套依赖的版本锁定
@@ -1904,32 +1904,32 @@ python_version = "3.11"
 strict = true
 ```
 
-###### 实战：用uv搭建完整的AI项目环境
+### 实战：用uv搭建完整的AI项目环境
 
 ```bash
-##### 1. 创建项目目录
+# 1. 创建项目目录
 mkdir ai-rag-service && cd ai-rag-service
 
-##### 2. 初始化uv项目
+# 2. 初始化uv项目
 uv init --name ai-rag-service
 
-##### 3. 创建虚拟环境（自动安装对应Python版本）
+# 3. 创建虚拟环境（自动安装对应Python版本）
 uv venv
 
-##### 4. 安装依赖
+# 4. 安装依赖
 uv add openai langchain-openai fastapi uvicorn
 uv add --dev pytest pytest-asyncio black ruff mypy
 
-##### 5. 安装可选依赖
+# 5. 安装可选依赖
 uv add --optional embedding sentence-transformers torch
 
-##### 6. 锁定依赖版本（生成uv.lock）
+# 6. 锁定依赖版本（生成uv.lock）
 uv lock
 
-##### 7. 同步到当前环境
+# 7. 同步到当前环境
 uv sync
 
-##### 8. 添加队友需要的依赖后，更新锁定文件
+# 8. 添加队友需要的依赖后，更新锁定文件
 uv add httpx
 uv lock
 uv sync
@@ -1938,7 +1938,7 @@ uv sync
 **uv.lock的重要性**：`uv.lock`记录了每个依赖的**精确版本**，包括子依赖。团队所有人都用这个文件安装，就能保证"我们装的是一模一样的"。
 
 ```bash
-##### 队友入职后
+# 队友入职后
 git clone https://github.com/company/ai-rag-service.git
 cd ai-rag-service
 uv sync  # 自动读取uv.lock，安装完全相同的版本
@@ -1951,33 +1951,33 @@ uv sync  # 自动读取uv.lock，安装完全相同的版本
 
 ---
 
-#### 4.6 AI开发工具链：效率提升的秘诀
+## 4.6 AI开发工具链：效率提升的秘诀
 
-###### Jupyter Notebook：AI科学家的瑞士军刀
+### Jupyter Notebook：AI科学家的瑞士军刀
 
 你以为Jupyter就是"写代码然后运行"？太天真了。
 
 ```python
-##### 魔术命令
+# 魔术命令
 %timeit sum(range(1000000))  # 测量执行时间
 %time sum(range(1000000))
 
-##### 行魔术
+# 行魔术
 %run app.py  # 运行外部脚本
 %load_ext autoreload
 %autoreload 2  # 自动重新加载修改的模块
 
-##### 单元格管理
-##### %%writefile 保存到文件
+# 单元格管理
+# %%writefile 保存到文件
 %%writefile test_utils.py
 def test_function():
     return "Hello"
 
-##### 追踪变量
+# 追踪变量
 %who_ls  # 列出所有变量
 %whos    # 详细列出变量
 
-##### SQL支持
+# SQL支持
 %load_ext sql
 %sql sqlite:///mydb.db
 %sql SELECT * FROM users LIMIT 5
@@ -1986,39 +1986,39 @@ def test_function():
 **Jupyter高级技巧**：
 
 ```python
-##### 1. 长循环的进度条
+# 1. 长循环的进度条
 from tqdm.notebook import tqdm
 for i in tqdm(range(100)):
     # 模拟处理
     result = call_api(texts[i])
 
-##### 2. 异常不中断
+# 2. 异常不中断
 %%capture
-##### 有异常的代码，结果存到captured变量
+# 有异常的代码，结果存到captured变量
 
-##### 3. Markdown渲染
+# 3. Markdown渲染
 from IPython.display import Markdown, display
 display(Markdown("""
-#### 大标题
+## 大标题
 这是一个 **Markdown** 单元格
 - 列表项1
 - 列表项2
 """))
 
-##### 4. 远程连接（服务器上的Jupyter）
-##### 在服务器上
+# 4. 远程连接（服务器上的Jupyter）
+# 在服务器上
 jupyter notebook --ip=0.0.0.0 --port=8888 --no-browser
 
-##### 本地浏览器访问 http://服务器IP:8888
-##### 输入token登录
+# 本地浏览器访问 http://服务器IP:8888
+# 输入token登录
 ```
 
-###### API调试：HTTPie vs curl
+### API调试：HTTPie vs curl
 
 调试API时，你有几个选择：
 
 ```bash
-##### curl（原始但万能）
+# curl（原始但万能）
 curl -X POST https://api.openai.com/v1/chat/completions \
   -H "Authorization: Bearer $OPENAI_API_KEY" \
   -H "Content-Type: application/json" \
@@ -2027,15 +2027,15 @@ curl -X POST https://api.openai.com/v1/chat/completions \
     "messages": [{"role": "user", "content": "你好"}]
   }'
 
-##### HTTPie（更人类友好的语法）
-##### 需要安装: pip install httpie
+# HTTPie（更人类友好的语法）
+# 需要安装: pip install httpie
 http POST https://api.openai.com/v1/chat/completions \
   Authorization:"Bearer $OPENAI_API_KEY" \
   model="gpt-4o-mini" \
   messages:='[{"role": "user", "content": "你好"}]'
 
-##### HTTP Prompt（交互式调试）
-##### 需要安装: pip install http-prompt
+# HTTP Prompt（交互式调试）
+# 需要安装: pip install http-prompt
 http-prompt http://localhost:8000
 ```
 
@@ -2044,19 +2044,19 @@ http-prompt http://localhost:8000
 - 复杂调试：`HTTPie`
 - 团队分享：`Python脚本`
 
-###### pandas在AI数据准备中的应用
+### pandas在AI数据准备中的应用
 
 AI项目的数据准备，pandas是标配：
 
 ```python
 import pandas as pd
 
-##### 读取各种格式
+# 读取各种格式
 df = pd.read_csv("data.csv")
 df = pd.read_json("data.jsonl", lines=True)  # JSONL格式（AI训练数据常用）
 df = pd.read_parquet("data.parquet")  # 列式存储，读取快
 
-##### 文本预处理
+# 文本预处理
 df["content_clean"] = (
     df["content"]
     .str.strip()  # 去除首尾空格
@@ -2064,22 +2064,22 @@ df["content_clean"] = (
     .str[:5000]  # 截断超长文本
 )
 
-##### 按条件筛选
+# 按条件筛选
 df_filtered = df[df["category"].isin(["tech", "news"])]
 df_filtered = df_filtered[df_filtered["content"].str.len() > 100]
 
-##### 分组统计
+# 分组统计
 category_stats = df.groupby("category").agg({
     "content": ["count", "mean"],
     "tokens": ["sum", "mean"]
 })
 
-##### 导出
+# 导出
 df.to_csv("output.csv", index=False)
 df.to_json("output.jsonl", orient="records", lines=True, force_ascii=False)
 ```
 
-###### logging模块的正确用法
+### logging模块的正确用法
 
 不要用`print`调试了，用`logging`：
 
@@ -2122,7 +2122,7 @@ def setup_logger(name: str, level: int = logging.INFO) -> logging.Logger:
     
     return logger
 
-##### 使用
+# 使用
 logger = setup_logger(__name__)
 
 logger.debug("调试信息（开发时看）")
@@ -2134,16 +2134,16 @@ logger.error("错误信息")
 **AI开发中的典型场景**：
 
 ```python
-##### 记录API调用
+# 记录API调用
 logger.info(f"[API] 调用 {model}, tokens={tokens_used}")
 
-##### 记录性能
+# 记录性能
 import time
 start = time.time()
 result = process()
 logger.info(f"[PERF] 处理耗时: {time.time() - start:.2f}s")
 
-##### 记录异常
+# 记录异常
 try:
     await client.chat(messages)
 except Exception as e:
@@ -2152,7 +2152,7 @@ except Exception as e:
 
 ---
 
-#### 行动清单
+## 行动清单
 
 恭喜你完成了这一章的学习。以下是你现在应该掌握的技能：
 
