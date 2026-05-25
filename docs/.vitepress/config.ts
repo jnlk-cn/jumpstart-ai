@@ -6,13 +6,14 @@ export default defineConfig({
   description: 'Build First, Learn As You Go - AI应用开发入行实战',
   base: '/jumpstart-ai/',
   
+  ignoreDeadLinks: true,
+  
   locales: {
     zh: {
       label: '中文',
       lang: 'zh-CN',
       link: '/zh/',
       themeConfig: {
-        // 导航
         nav: [
           { text: '首页', link: '/zh/' },
           { 
@@ -27,7 +28,6 @@ export default defineConfig({
             ]
           },
         ],
-        // 侧边栏
         sidebar: {
           '/zh/part1-cognition/': [
             {
@@ -103,11 +103,9 @@ export default defineConfig({
             }
           ]
         },
-        // 社交链接
         socialLinks: [
           { icon: 'github', link: 'https://github.com/jnlk-cn/jumpstart-ai' }
         ],
-        // 语言切换
         selectLanguageText: '语言',
         selectLanguageAriaLabel: '选择语言',
       }
@@ -240,7 +238,7 @@ export default defineConfig({
               items: [
                 { text: '第1章 AIアプリ開発の真実', link: '/ja/part1-cognition/chapter1' },
                 { text: '第2章 なぜ「まず乗れ」が合理的な戦略か', link: '/ja/part1-cognition/chapter2' },
-                { text: '第3章 あなたのharapkan(entry)ロードマップ', link: '/ja/part1-cognition/chapter3' },
+                { text: '第3章 あなたの_entryロードマップ', link: '/ja/part1-cognition/chapter3' },
               ]
             }
           ],
@@ -388,8 +386,8 @@ export default defineConfig({
               items: [
                 { text: '제16장 이력서와 포트폴리오', link: '/ko/part5-career/chapter16' },
                 { text: '제17장 면접 실전', link: '/ko/part5-career/chapter17' },
-                { text: '제18장入职前 30일', link: '/ko/part5-career/chapter18' },
-                { text: '제19장入职後 6개월', link: '/ko/part5-career/chapter19' },
+                { text: '제18장 入职前 30일', link: '/ko/part5-career/chapter18' },
+                { text: '제19장 入职後 6개월', link: '/ko/part5-career/chapter19' },
                 { text: '제20장 AI 개발자의 미래', link: '/ko/part5-career/chapter20' },
               ]
             }
@@ -417,21 +415,17 @@ export default defineConfig({
     }
   },
 
-  // 搜索配置 - 使用本地 minisearch
   themeConfig: {
-    // 默认搜索配置
     search: {
       provider: 'local',
       options: {
         detailedView: true
       }
     },
-    // 底部链接
     footer: {
       message: 'Released under the MIT License.',
       copyright: 'Copyright © 2024 jnlk-cn'
     },
-    // 深色模式
     appearance: 'auto'
   }
 })

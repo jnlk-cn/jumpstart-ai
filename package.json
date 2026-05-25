@@ -2,6 +2,7 @@
   "name": "jumpstart-ai",
   "version": "1.0.0",
   "description": "Jumpstart AI: Build First, Learn As You Go - AI应用开发入行实战",
+  "type": "module",
   "scripts": {
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
