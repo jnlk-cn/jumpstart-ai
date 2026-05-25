@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="zh-CN" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>第15章 面试实战 | Jumpstart AI</title>
+    <meta name="description" content="Build First, Learn As You Go - AI应用开发入行实战">
+    <meta name="generator" content="VitePress v1.6.4">
+    <link rel="preload stylesheet" href="/jumpstart-ai/assets/style.V4VrTBv-.css" as="style">
+    <link rel="preload stylesheet" href="/jumpstart-ai/vp-icons.css" as="style">
+    
+    <script type="module" src="/jumpstart-ai/assets/app.CIRP5E0P.js"></script>
+    <link rel="preload" href="/jumpstart-ai/assets/inter-roman-latin.Di8DUHzh.woff2" as="font" type="font/woff2" crossorigin="">
+    <link rel="modulepreload" href="/jumpstart-ai/assets/chunks/theme.C9FoZOu1.js">
+    <link rel="modulepreload" href="/jumpstart-ai/assets/chunks/framework.DpF7k2f3.js">
+    <link rel="modulepreload" href="/jumpstart-ai/assets/zh_part5-career_chapter17.md.CfUjJtpj.lean.js">
+    <link rel="icon" href="/favicon.svg">
+    <meta name="theme-color" content="#6366f1">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://raw.githubusercontent.com/jnlk-cn/jumpstart-ai/main/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/jnlk-cn/jumpstart-ai/main/og-image.png">
+    <script id="check-dark-mode">(()=>{const e=localStorage.getItem("vitepress-theme-appearance")||"auto",a=window.matchMedia("(prefers-color-scheme: dark)").matches;(!e||e==="auto"?a:e==="dark")&&document.documentElement.classList.add("dark")})();</script>
+    <script id="check-mac-os">document.documentElement.classList.toggle("mac",/Mac|iPhone|iPod|iPad/i.test(navigator.platform));</script>
+  </head>
+  <body>
+    <div id="app"><div class="Layout" data-v-5d98c3a5><!--[--><!--]--><!--[--><span tabindex="-1" data-v-0b0ada53></span><a href="#VPContent" class="VPSkipLink visually-hidden" data-v-0b0ada53>Skip to content</a><!--]--><!----><header class="VPNav" data-v-5d98c3a5 data-v-ae24b3ad><div class="VPNavBar" data-v-ae24b3ad data-v-6aa21345><div class="wrapper" data-v-6aa21345><div class="container" data-v-6aa21345><div class="title" data-v-6aa21345><div class="VPNavBarTitle has-sidebar" data-v-6aa21345 data-v-1168a8e4><a class="title" href="/jumpstart-ai/zh/" data-v-1168a8e4><!--[--><!--]--><!--[--><img class="VPImage logo" src="/jumpstart-ai/logo.svg" alt data-v-8426fc1a><!--]--><span data-v-1168a8e4>AI应用开发入行实战</span><!--[--><!--]--></a></div></div><div class="content" data-v-6aa21345><div class="content-body" data-v-6aa21345><!--[--><!--]--><div class="VPNavBarSearch search" data-v-6aa21345><!--[--><!----><div id="local-search"><button type="button" class="DocSearch DocSearch-Button" aria-label="Search"><span class="DocSearch-Button-Container"><span class="vp-icon DocSearch-Search-Icon"></span><span class="DocSearch-Button-Placeholder">Search</span></span><span class="DocSearch-Button-Keys"><kbd class="DocSearch-Button-Key"></kbd><kbd class="DocSearch-Button-Key">K</kbd></span></button></div><!--]--></div><nav aria-labelledby="main-nav-aria-label" class="VPNavBarMenu menu" data-v-6aa21345 data-v-dc692963><span id="main-nav-aria-label" class="visually-hidden" data-v-dc692963> Main Navigation </span><!--[--><!--[--><a class="VPLink link VPNavBarMenuLink" href="/jumpstart-ai/zh/" tabindex="0" data-v-dc692963 data-v-e56f3d57><!--[--><span data-v-e56f3d57>首页</span><!--]--></a><!--]--><!--[--><a class="VPLink link VPNavBarMenuLink" href="/jumpstart-ai/zh/part1-cognition/chapter1.html" tabindex="0" data-v-dc692963 data-v-e56f3d57><!--[--><span data-v-e56f3d57>认知篇</span><!--]--></a><!--]--><!--[--><a class="VPLink link VPNavBarMenuLink" href="/jumpstart-ai/zh/part2-fundamentals/chapter4.html" tabindex="0" data-v-dc692963 data-v-e56f3d57><!--[--><span data-v-e56f3d57>基础篇</span><!--]--></a><!--]--><!--[--><a class="VPLink link VPNavBarMenuLink" href="/jumpstart-ai/zh/part3-practice/chapter8.html" tabindex="0" data-v-dc692963 data-v-e56f3d57><!--[--><span data-v-e56f3d57>实战篇</span><!--]--></a><!--]--><!--[--><a class="VPLink link VPNavBarMenuLink" href="/jumpstart-ai/zh/part4-advanced/chapter13.html" tabindex="0" data-v-dc692963 data-v-e56f3d57><!--[--><span data-v-e56f3d57>进阶篇</span><!--]--></a><!--]--><!--[--><a class="VPLink link VPNavBarMenuLink active" href="/jumpstart-ai/zh/part5-career/chapter16.html" tabindex="0" data-v-dc692963 data-v-e56f3d57><!--[--><span data-v-e56f3d57>求职篇</span><!--]--></a><!--]--><!--[--><a class="VPLink link VPNavBarMenuLink" href="/jumpstart-ai/zh/appendix/appendix-a.html" tabindex="0" data-v-dc692963 data-v-e56f3d57><!--[--><span data-v-e56f3d57>附录</span><!--]--></a><!--]--><!--]--></nav><div class="VPFlyout VPNavBarTranslations translations" data-v-6aa21345 data-v-88af2de4 data-v-cf11d7a2><button type="button" class="button" aria-haspopup="true" aria-expanded="false" aria-label="Change language" data-v-cf11d7a2><span class="text" data-v-cf11d7a2><span class="vpi-languages option-icon" data-v-cf11d7a2></span><!----><span class="vpi-chevron-down text-icon" data-v-cf11d7a2></span></span></button><div class="menu" data-v-cf11d7a2><div class="VPMenu" data-v-cf11d7a2 data-v-b98bc113><!----><!--[--><!--[--><div class="items" data-v-88af2de4><p class="title" data-v-88af2de4>简体中文</p><!--[--><div class="VPMenuLink" data-v-88af2de4 data-v-35975db6><a class="VPLink link" href="/jumpstart-ai/en/part5-career/chapter17.html" data-v-35975db6><!--[--><span data-v-35975db6>English</span><!--]--></a></div><div class="VPMenuLink" data-v-88af2de4 data-v-35975db6><a class="VPLink link" href="/jumpstart-ai/ja/part5-career/chapter17.html" data-v-35975db6><!--[--><span data-v-35975db6>日本語</span><!--]--></a></div><div class="VPMenuLink" data-v-88af2de4 data-v-35975db6><a class="VPLink link" href="/jumpstart-ai/ko/part5-career/chapter17.html" data-v-35975db6><!--[--><span data-v-35975db6>한국어</span><!--]--></a></div><!--]--></div><!--]--><!--]--></div></div></div><div class="VPNavBarAppearance appearance" data-v-6aa21345 data-v-6c893767><button class="VPSwitch VPSwitchAppearance" type="button" role="switch" title aria-checked="false" data-v-6c893767 data-v-5337faa4 data-v-1d5665e3><span class="check" data-v-1d5665e3><span class="icon" data-v-1d5665e3><!--[--><span class="vpi-sun sun" data-v-5337faa4></span><span class="vpi-moon moon" data-v-5337faa4></span><!--]--></span></span></button></div><div class="VPSocialLinks VPNavBarSocialLinks social-links" data-v-6aa21345 data-v-0394ad82 data-v-7bc22406><!--[--><a class="VPSocialLink no-icon" href="https://github.com/jnlk-cn/jumpstart-ai" aria-label="github" target="_blank" rel="noopener" data-v-7bc22406 data-v-bd121fe5><span class="vpi-social-github"></span></a><!--]--></div><div class="VPFlyout VPNavBarExtra extra" data-v-6aa21345 data-v-bb2aa2f0 data-v-cf11d7a2><button type="button" class="button" aria-haspopup="true" aria-expanded="false" aria-label="extra navigation" data-v-cf11d7a2><span class="vpi-more-horizontal icon" data-v-cf11d7a2></span></button><div class="menu" data-v-cf11d7a2><div class="VPMenu" data-v-cf11d7a2 data-v-b98bc113><!----><!--[--><!--[--><div class="group translations" data-v-bb2aa2f0><p class="trans-title" data-v-bb2aa2f0>简体中文</p><!--[--><div class="VPMenuLink" data-v-bb2aa2f0 data-v-35975db6><a class="VPLink link" href="/jumpstart-ai/en/part5-career/chapter17.html" data-v-35975db6><!--[--><span data-v-35975db6>English</span><!--]--></a></div><div class="VPMenuLink" data-v-bb2aa2f0 data-v-35975db6><a class="VPLink link" href="/jumpstart-ai/ja/part5-career/chapter17.html" data-v-35975db6><!--[--><span data-v-35975db6>日本語</span><!--]--></a></div><div class="VPMenuLink" data-v-bb2aa2f0 data-v-35975db6><a class="VPLink link" href="/jumpstart-ai/ko/part5-career/chapter17.html" data-v-35975db6><!--[--><span data-v-35975db6>한국어</span><!--]--></a></div><!--]--></div><div class="group" data-v-bb2aa2f0><div class="item appearance" data-v-bb2aa2f0><p class="label" data-v-bb2aa2f0>Appearance</p><div class="appearance-action" data-v-bb2aa2f0><button class="VPSwitch VPSwitchAppearance" type="button" role="switch" title aria-checked="false" data-v-bb2aa2f0 data-v-5337faa4 data-v-1d5665e3><span class="check" data-v-1d5665e3><span class="icon" data-v-1d5665e3><!--[--><span class="vpi-sun sun" data-v-5337faa4></span><span class="vpi-moon moon" data-v-5337faa4></span><!--]--></span></span></button></div></div></div><div class="group" data-v-bb2aa2f0><div class="item social-links" data-v-bb2aa2f0><div class="VPSocialLinks social-links-list" data-v-bb2aa2f0 data-v-7bc22406><!--[--><a class="VPSocialLink no-icon" href="https://github.com/jnlk-cn/jumpstart-ai" aria-label="github" target="_blank" rel="noopener" data-v-7bc22406 data-v-bd121fe5><span class="vpi-social-github"></span></a><!--]--></div></div></div><!--]--><!--]--></div></div></div><!--[--><!--]--><button type="button" class="VPNavBarHamburger hamburger" aria-label="mobile navigation" aria-expanded="false" aria-controls="VPNavScreen" data-v-6aa21345 data-v-e5dd9c1c><span class="container" data-v-e5dd9c1c><span class="top" data-v-e5dd9c1c></span><span class="middle" data-v-e5dd9c1c></span><span class="bottom" data-v-e5dd9c1c></span></span></button></div></div></div></div><div class="divider" data-v-6aa21345><div class="divider-line" data-v-6aa21345></div></div></div><!----></header><div class="VPLocalNav has-sidebar empty" data-v-5d98c3a5 data-v-a6f0e41e><div class="container" data-v-a6f0e41e><button class="menu" aria-expanded="false" aria-controls="VPSidebarNav" data-v-a6f0e41e><span class="vpi-align-left menu-icon" data-v-a6f0e41e></span><span class="menu-text" data-v-a6f0e41e>Menu</span></button><div class="VPLocalNavOutlineDropdown" style="--vp-vh:0px;" data-v-a6f0e41e data-v-8a42e2b4><button data-v-8a42e2b4>Return to top</button><!----></div></div></div><aside class="VPSidebar" data-v-5d98c3a5 data-v-319d5ca6><div class="curtain" data-v-319d5ca6></div><nav class="nav" id="VPSidebarNav" aria-labelledby="sidebar-aria-label" tabindex="-1" data-v-319d5ca6><span class="visually-hidden" id="sidebar-aria-label" data-v-319d5ca6> Sidebar Navigation </span><!--[--><!--]--><!--[--><div class="no-transition group" data-v-c40bc020><section class="VPSidebarItem level-0 has-active" data-v-c40bc020 data-v-b3fd67f8><div class="item" role="button" tabindex="0" data-v-b3fd67f8><div class="indicator" data-v-b3fd67f8></div><h2 class="text" data-v-b3fd67f8>第五篇 求职篇</h2><!----></div><div class="items" data-v-b3fd67f8><!--[--><div class="VPSidebarItem level-1 is-link" data-v-b3fd67f8 data-v-b3fd67f8><div class="item" data-v-b3fd67f8><div class="indicator" data-v-b3fd67f8></div><a class="VPLink link link" href="/jumpstart-ai/zh/part5-career/chapter16.html" data-v-b3fd67f8><!--[--><p class="text" data-v-b3fd67f8>第16章 简历与作品集</p><!--]--></a><!----></div><!----></div><div class="VPSidebarItem level-1 is-link" data-v-b3fd67f8 data-v-b3fd67f8><div class="item" data-v-b3fd67f8><div class="indicator" data-v-b3fd67f8></div><a class="VPLink link link" href="/jumpstart-ai/zh/part5-career/chapter17.html" data-v-b3fd67f8><!--[--><p class="text" data-v-b3fd67f8>第17章 面试实战</p><!--]--></a><!----></div><!----></div><div class="VPSidebarItem level-1 is-link" data-v-b3fd67f8 data-v-b3fd67f8><div class="item" data-v-b3fd67f8><div class="indicator" data-v-b3fd67f8></div><a class="VPLink link link" href="/jumpstart-ai/zh/part5-career/chapter18.html" data-v-b3fd67f8><!--[--><p class="text" data-v-b3fd67f8>第18章 入职前30天快速站稳</p><!--]--></a><!----></div><!----></div><div class="VPSidebarItem level-1 is-link" data-v-b3fd67f8 data-v-b3fd67f8><div class="item" data-v-b3fd67f8><div class="indicator" data-v-b3fd67f8></div><a class="VPLink link link" href="/jumpstart-ai/zh/part5-career/chapter19.html" data-v-b3fd67f8><!--[--><p class="text" data-v-b3fd67f8>第19章 入职后6个月从混进去到站得住</p><!--]--></a><!----></div><!----></div><div class="VPSidebarItem level-1 is-link" data-v-b3fd67f8 data-v-b3fd67f8><div class="item" data-v-b3fd67f8><div class="indicator" data-v-b3fd67f8></div><a class="VPLink link link" href="/jumpstart-ai/zh/part5-career/chapter20.html" data-v-b3fd67f8><!--[--><p class="text" data-v-b3fd67f8>第20章 AI应用开发者的未来</p><!--]--></a><!----></div><!----></div><!--]--></div></section></div><!--]--><!--[--><!--]--></nav></aside><div class="VPContent has-sidebar" id="VPContent" data-v-5d98c3a5 data-v-1428d186><div class="VPDoc has-sidebar has-aside" data-v-1428d186 data-v-39a288b8><!--[--><!--]--><div class="container" data-v-39a288b8><div class="aside" data-v-39a288b8><div class="aside-curtain" data-v-39a288b8></div><div class="aside-container" data-v-39a288b8><div class="aside-content" data-v-39a288b8><div class="VPDocAside" data-v-39a288b8 data-v-3f215769><!--[--><!--]--><!--[--><!--]--><nav aria-labelledby="doc-outline-aria-label" class="VPDocAsideOutline" data-v-3f215769 data-v-a5bbad30><div class="content" data-v-a5bbad30><div class="outline-marker" data-v-a5bbad30></div><div aria-level="2" class="outline-title" id="doc-outline-aria-label" role="heading" data-v-a5bbad30>目录</div><ul class="VPDocOutlineItem root" data-v-a5bbad30 data-v-b933a997><!--[--><!--]--></ul></div></nav><!--[--><!--]--><div class="spacer" data-v-3f215769></div><!--[--><!--]--><!----><!--[--><!--]--><!--[--><!--]--></div></div></div></div><div class="content" data-v-39a288b8><div class="content-container" data-v-39a288b8><!--[--><!--]--><main class="main" data-v-39a288b8><div style="position:relative;" class="vp-doc _jumpstart-ai_zh_part5-career_chapter17" data-v-39a288b8><div><h1 id="第15章-面试实战" tabindex="-1">第15章 面试实战 <a class="header-anchor" href="#第15章-面试实战" aria-label="Permalink to &quot;第15章 面试实战&quot;">​</a></h1><h2 id="本章你能带走什么" tabindex="-1">本章你能带走什么 <a class="header-anchor" href="#本章你能带走什么" aria-label="Permalink to &quot;本章你能带走什么&quot;">​</a></h2><p>恭喜你，终于到了最激动人心的环节——面试实战！</p><p>前面的章节我们学了RAG、Agent、LangChain、部署优化，写了简历、搭了GitHub。现在万事俱备，只差临门一脚。</p><p>但说实话，很多人在这一步会掉链子。明明技术学得不错，项目也做了几个，面试时却答得一塌糊涂。要么紧张得脑子空白，要么答非所问被面试官带跑，要么聊得很嗨结果没通过...</p><p><strong>面试和写代码不一样，它需要专门训练。</strong></p><p>这可能是整本书里最&quot;功利&quot;的一章——不教你深入原理，只教你<strong>怎么在面试中得分</strong>。</p><p>读完这章你会带走：</p><ul><li>AI开发岗面试的题型全解，知道每种题该怎么答</li><li>RAG、Agent、部署方案的技术面试高频题和参考答案</li><li>系统设计题的答题框架，以后遇到这类题不慌</li><li>行为面试的套路，把你的转行故事讲得打动人心</li><li>常见面试题库，涵盖了2025-2026年最新的高频考点</li></ul><p>好了，废话不多说，我们开始。</p><hr><h2 id="_15-1-ai应用开发岗面试题型全解" tabindex="-1">15.1 AI应用开发岗面试题型全解 <a class="header-anchor" href="#_15-1-ai应用开发岗面试题型全解" aria-label="Permalink to &quot;15.1 AI应用开发岗面试题型全解&quot;">​</a></h2><h3 id="面试都考什么" tabindex="-1">面试都考什么 <a class="header-anchor" href="#面试都考什么" aria-label="Permalink to &quot;面试都考什么&quot;">​</a></h3><p>先搞清楚敌人长什么样。AI应用开发岗的面试通常分为四轮：</p><table tabindex="0"><thead><tr><th>轮次</th><th>名称</th><th>时长</th><th>重点考察</th></tr></thead><tbody><tr><td>第1轮</td><td>HR面/初面</td><td>30-45分钟</td><td>基本情况、转行动机、沟通表达</td></tr><tr><td>第2轮</td><td>技术面（一面）</td><td>45-60分钟</td><td>技术基础、项目经历、编程能力</td></tr><tr><td>第3轮</td><td>技术面（二面）</td><td>60分钟</td><td>系统设计、深度追问、实战能力</td></tr><tr><td>第4轮</td><td>主管/HR终面</td><td>30-45分钟</td><td>价值观、团队适配、职业规划</td></tr></tbody></table><p>四轮下来，短则一周，长则一个月。这中间任何一轮发挥失常都可能挂掉。</p><h3 id="四种题型及应对策略" tabindex="-1">四种题型及应对策略 <a class="header-anchor" href="#四种题型及应对策略" aria-label="Permalink to &quot;四种题型及应对策略&quot;">​</a></h3><p><strong>题型1：概念解释题</strong></p><p>这类题是送分题，考你对基础概念的掌握程度。</p><p>典型问题：</p><ul><li>&quot;什么是RAG？为什么需要RAG？&quot;</li><li>&quot;Agent和Chatbot有什么区别？&quot;</li><li>&quot;LangChain的核心组件有哪些？&quot;</li></ul><p><strong>应对策略</strong>：用&quot;定义→原理→应用→个人理解&quot;四层结构来回答。</p><p>例如被问到&quot;RAG是什么&quot;：</p><div class="language- vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>RAG是Retrieval-Augmented Generation的缩写，中文叫检索增强生成。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>它的核心原理是：在用户提问时，先从外部知识库检索相关文档，</span></span>
+<span class="line"><span>再把检索到的内容和用户问题一起喂给大模型，让模型基于真实</span></span>
+<span class="line"><span>的文档内容生成答案，而不是纯粹靠&quot;记忆&quot;生成。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>这样做的好处有三个：</span></span>
+<span class="line"><span>1. 解决知识时效性问题——知识库可以随时更新，不用重新训练模型</span></span>
+<span class="line"><span>2. 减少幻觉——模型只能基于检索到的内容回答，降低胡编的概率</span></span>
+<span class="line"><span>3. 保护数据隐私——私有数据不用喂给模型训练</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>我之前做的企业知识库项目就是用RAG架构...</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><p><strong>题型2：方案设计题</strong></p><p>这类题考察你的系统思维和工程能力。</p><p>典型问题：</p><ul><li>&quot;如何设计一个企业知识库问答系统？&quot;</li><li>&quot;如果检索召回率很低，你会怎么排查？&quot;</li><li>&quot;如何优化Agent的响应延迟？&quot;</li></ul><p><strong>应对策略</strong>：采用&quot;需求分析→方案选型→架构设计→权衡取舍&quot;的框架。</p><p>这类题没有标准答案，面试官想看的是你的思考过程。后面15.3节会详细讲。</p><p><strong>题型3：项目深挖题</strong></p><p>这类题考察你项目的真实性和深度。</p><p>典型问题：</p><ul><li>&quot;你在这个RAG项目中遇到了什么挑战？怎么解决的？&quot;</li><li>&quot;为什么选择LangChain而不是LlamaIndex？&quot;</li><li>&quot;你项目的准确率是多少？怎么评估的？&quot;</li></ul><p><strong>应对策略</strong>：用STAR法则（Situation-Task-Action-Result）组织回答。</p><p>关于STAR法则，第14章简历部分已经提过，但面试回答需要更详细：</p><div class="language- vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>S（背景）：当时项目背景是什么</span></span>
+<span class="line"><span>T（任务）：你负责什么，有什么难点</span></span>
+<span class="line"><span>A（行动）：你具体做了什么，思路是什么</span></span>
+<span class="line"><span>R（结果）：带来了什么效果，有数据支撑</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>举一个我被问过的真实问题：</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>面试官：&quot;你们RAG项目的召回率怎么做的优化？&quot;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>我：&quot;我们项目最开始Top5召回率只有65%，后来提升到了89%。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>（Task）我的任务是把召回率提上去。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>（Action）我做了三件事：</span></span>
+<span class="line"><span>1. 换了Embedding模型，从text2vec换成BGE-M3，维度从768提升到1024</span></span>
+<span class="line"><span>2. 引入了混合检索，原来只用向量检索，现在加了BM25关键词检索</span></span>
+<span class="line"><span>3. 加了重排序，用BAAI/bge-reranker-base对Top20的结果做二次排序</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>（Result）最终Top5召回率从65%提升到89%，Top10达到了94%。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>（Reflection）回过头看，Embedding模型的选型对召回率影响最大，</span></span>
+<span class="line"><span>但当时我其实踩了不少坑，比如一开始用的中文模型效果反而不如</span></span>
+<span class="line"><span>多语言模型，后来通过对比实验才发现这个问题...&quot;</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br></div></div><p><strong>题型4：编程题</strong></p><p>这类题考察你的代码能力，但和纯算法岗不同，AI开发岗通常考得比较简单。</p><p>典型问题：</p><ul><li>&quot;用Python实现一个简单的向量检索&quot;</li><li>&quot;写一个Prompt模板，支持Few-shot&quot;</li><li>&quot;用LangChain实现一个Chain&quot;</li></ul><p><strong>应对策略</strong>：思路比完美更重要。能写伪代码就写伪代码，写不出来就说思路。</p><blockquote><p>💡 <strong>面试官想看的</strong>：不是你的代码多完美，而是你的思路是否清晰，遇到不会的问题怎么沟通。</p></blockquote><h3 id="面试的底层逻辑" tabindex="-1">面试的底层逻辑 <a class="header-anchor" href="#面试的底层逻辑" aria-label="Permalink to &quot;面试的底层逻辑&quot;">​</a></h3><p>很多人面试准备了一大堆，但不知道为什么面试官要问这些问题。</p><p>其实面试的本质是<strong>筛选</strong>，筛选的是&quot;能干活、能融入团队、不会给团队添麻烦&quot;的人。</p><p>基于这个目的，面试官会关注三点：</p><p><strong>1. 技术能力：你能做这个活吗？</strong></p><ul><li>基础概念是否清晰</li><li>是否有真实的项目经验</li><li>遇到问题能否独立解决</li></ul><p><strong>2. 思维方式：你解决问题的方式对吗？</strong></p><ul><li>遇到没见过的题会不会瞎答</li><li>思考问题是否全面</li><li>能否权衡取舍（没有完美方案）</li></ul><p><strong>3. 软实力：你和团队合得来吗？</strong></p><ul><li>沟通是否清晰</li><li>态度是否积极</li><li>是否有成长潜力</li></ul><p>搞清楚这个底层逻辑，你就知道该重点准备什么了。</p><hr><h2 id="_15-2-技术面试-rag链路、agent设计、部署方案" tabindex="-1">15.2 技术面试：RAG链路、Agent设计、部署方案 <a class="header-anchor" href="#_15-2-技术面试-rag链路、agent设计、部署方案" aria-label="Permalink to &quot;15.2 技术面试：RAG链路、Agent设计、部署方案&quot;">​</a></h2><h3 id="rag链路-面试最常问的技术点" tabindex="-1">RAG链路：面试最常问的技术点 <a class="header-anchor" href="#rag链路-面试最常问的技术点" aria-label="Permalink to &quot;RAG链路：面试最常问的技术点&quot;">​</a></h3><p>RAG是AI应用开发岗面试的头号宠儿，基本上每次技术面都会问到。问的角度很多，但核心都是围绕这几个环节：</p><p><strong>1. RAG的核心流程</strong></p><div class="language- vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>面试题：请描述一下RAG的完整流程。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>参考答案：</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>RAG分为三个阶段：</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>阶段一：索引阶段（离线）</span></span>
+<span class="line"><span>文档加载 → 文档清洗 → 文本切分 → 向量化 → 存入向量数据库</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>阶段二：检索阶段（在线）</span></span>
+<span class="line"><span>用户问题 → Query改写 → 向量检索 → 混合检索 → 重排序 → 筛选Top-K</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>阶段三：生成阶段（在线）</span></span>
+<span class="line"><span>组装Prompt → 调用LLM → 后处理 → 返回答案</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>每个环节都有优化空间：</span></span>
+<span class="line"><span>- 索引阶段：切分策略直接影响检索效果</span></span>
+<span class="line"><span>- 检索阶段：混合检索+重排序是提升准确率的关键</span></span>
+<span class="line"><span>- 生成阶段：Prompt工程决定模型能否有效利用检索结果</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br></div></div><p><strong>2. 文档切分策略</strong></p><div class="language- vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>面试题：文档切分有哪些策略？各自优缺点是什么？</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>参考答案：</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>常见策略有三种：</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>1. 固定长度切分</span></span>
+<span class="line"><span>优点：实现简单，均匀分布</span></span>
+<span class="line"><span>缺点：容易切断语义，在句子中间切开</span></span>
+<span class="line"><span>适用场景：快速原型验证</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>2. 递归字符切分</span></span>
+<span class="line"><span>优点：按段落/句子递归切，保证语义完整</span></span>
+<span class="line"><span>缺点：需要调参（chunk_size、overlap）</span></span>
+<span class="line"><span>适用场景：大多数场景，推荐优先使用</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>3. 语义切分</span></span>
+<span class="line"><span>优点：按语义边界切分，效果最好</span></span>
+<span class="line"><span>缺点：需要额外的语义模型，计算成本高</span></span>
+<span class="line"><span>适用场景：对召回率要求高的场景</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>我的经验是先用递归字符切分，通过overlap控制信息丢失。</span></span>
+<span class="line"><span>对于长文档，可以加一个&quot;标题锚点&quot;策略——每个chunk都带上</span></span>
+<span class="line"><span>它所属的章节标题，帮助模型理解上下文。</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br></div></div><p><strong>3. Embedding模型选型</strong></p><div class="language- vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>面试题：如何选择Embedding模型？需要考虑哪些因素？</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>参考答案：</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>选择Embedding模型主要看四个维度：</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>1. 语言支持</span></span>
+<span class="line"><span>中文场景必须选中文或支持中文的模型</span></span>
+<span class="line"><span>推荐：BAAI/bge-m3（多语言，中文效果好）</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>2. 向量维度</span></span>
+<span class="line"><span>维度越高表达能力越强，但存储和检索成本也越高</span></span>
+<span class="line"><span>常用维度：768（BGE-base）、1024（BGE-m3）</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>3. 检索效果</span></span>
+<span class="line"><span>用标准评测集测试（MIRACL、MS MARCO）</span></span>
+<span class="line"><span>BGE-M3在中文上效果比较好</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>4. 推理延迟</span></span>
+<span class="line"><span>生产环境需要考虑embedding的响应时间</span></span>
+<span class="line"><span>如果延迟高，可以考虑用量化版本的模型</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>我之前的项目对比过text2vec、bge-m3、text-embedding-ada-002，</span></span>
+<span class="line"><span>最终选了bge-m3，效果和性价比都不错。</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br></div></div><p><strong>4. 检索优化</strong></p><div class="language- vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>面试题：如何提升RAG的检索准确率？</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>参考答案：</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>提升检索准确率是个系统工程，我从三个方向入手：</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>方向1：检索策略优化</span></span>
+<span class="line"><span>- 从纯向量检索升级到混合检索（向量+BM25）</span></span>
+<span class="line"><span>- 用RRF（Reciprocal Rank Fusion）融合多路结果</span></span>
+<span class="line"><span>- 加一层重排序（reranker）做二次筛选</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>方向2：索引结构优化</span></span>
+<span class="line"><span>- 尝试不同的切分策略（递归字符、语义切分）</span></span>
+<span class="line"><span>- 调整chunk_size和overlap</span></span>
+<span class="line"><span>- 建立层级索引（文档→段落→句子）</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>方向3：Query优化</span></span>
+<span class="line"><span>- Query改写：让用户问题更利于检索</span></span>
+<span class="line"><span>- Query扩展：补充同义词、上下位词</span></span>
+<span class="line"><span>- HyDE：让LLM生成假设性答案来辅助检索</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>我之前项目Top5准确率从65%提升到89%，主要靠的是</span></span>
+<span class="line"><span>混合检索+重排序，这是业界验证过的有效方案。</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br></div></div><h3 id="agent设计-越来越重要的考点" tabindex="-1">Agent设计：越来越重要的考点 <a class="header-anchor" href="#agent设计-越来越重要的考点" aria-label="Permalink to &quot;Agent设计：越来越重要的考点&quot;">​</a></h3><p>Agent是2024-2025年的面试新宠，基本上技术面试都会问到。</p><p><strong>1. Agent的核心架构</strong></p><div class="language- vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>面试题：什么是AI Agent？它和传统的Chatbot有什么区别？</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>参考答案：</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Agent和Chatbot的本质区别在于：Agent有&quot;自主决策+行动执行&quot;能力。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Chatbot的流程是：</span></span>
+<span class="line"><span>用户输入 → LLM推理 → 输出文本 → 结束</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Agent的流程是：</span></span>
+<span class="line"><span>用户输入 → LLM推理 → 选择工具 → 执行工具 → 观察结果 → </span></span>
+<span class="line"><span>决定下一步 → 循环直到目标达成</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Agent的核心组件：</span></span>
+<span class="line"><span>1. 规划器（Planner）：分解任务，制定执行计划</span></span>
+<span class="line"><span>2. 记忆（Memory）：存储历史信息和中间状态</span></span>
+<span class="line"><span>3. 工具（Tools）：Agent可以调用的外部能力</span></span>
+<span class="line"><span>4. 执行器（Executor）：实际执行工具调用</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>我之前做的客服Agent，最关键的变化是加了一个&quot;决策中枢&quot;——</span></span>
+<span class="line"><span>模型不只回答问题，还要判断：这个问题我能不能答？需要查什么？</span></span>
+<span class="line"><span>查完之后用户满意吗？不满意要不要转人工？</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br></div></div><p><strong>2. 工具调用（Tool Calling）</strong></p><div class="language- vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>面试题：如何设计Agent的Tool？工具调用失败怎么处理？</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>参考答案：</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Tool设计的核心是：清晰的描述+规范的参数+完善的异常处理。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Tool定义通常包含：</span></span>
+<span class="line"><span>- 名称：做什么的</span></span>
+<span class="line"><span>- 描述：什么时候用</span></span>
+<span class="line"><span>- 参数schema：输入什么</span></span>
+<span class="line"><span>- 返回格式：输出什么</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>工具调用失败的错误类型和处理策略：</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>1. 参数错误</span></span>
+<span class="line"><span>原因：模型生成的参数不符合schema</span></span>
+<span class="line"><span>处理：Tool层做参数校验，返回明确的错误信息，让模型重试</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>2. 网络超时</span></span>
+<span class="line"><span>原因：调用外部API超时</span></span>
+<span class="line"><span>处理：设置合理的超时时间，重试机制（最多3次）</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>3. 业务异常</span></span>
+<span class="line"><span>原因：调用的系统返回了业务错误（如余额不足）</span></span>
+<span class="line"><span>处理：返回业务错误码，让Agent决定下一步（问用户、换方案、转人工）</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>4. 未知异常</span></span>
+<span class="line"><span>原因：完全预料不到的错误</span></span>
+<span class="line"><span>处理：记录日志，返回&quot;系统繁忙&quot;，避免Agent陷入死循环</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>我的经验是：每个Tool都要有fallback策略，不能让Agent因为</span></span>
+<span class="line"><span>一个工具失败就卡住。</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br></div></div><p><strong>3. 记忆机制设计</strong></p><div class="language- vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>面试题：Agent的上下文记忆是怎么设计的？</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>参考答案：</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>我采用分层记忆设计：</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>1. 工作记忆（Working Memory）</span></span>
+<span class="line"><span>- 当前对话的上下文，直接放在Prompt里</span></span>
+<span class="line"><span>- 通常保留最近5-10轮对话</span></span>
+<span class="line"><span>- 需要控制长度，避免超过模型上下文上限</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>2. 会话记忆（Session Memory）</span></span>
+<span class="line"><span>- 当前会话的摘要，存入Redis</span></span>
+<span class="line"><span>- 会话结束后存储，用户下次来访可以恢复</span></span>
+<span class="line"><span>- 存储用户偏好、当前任务进度等关键信息</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>3. 长期记忆（Long-term Memory）</span></span>
+<span class="line"><span>- 用户画像和重要事实，存入数据库</span></span>
+<span class="line"><span>- 比如用户的身份、职业、常用查询等</span></span>
+<span class="line"><span>- 用于个性化服务</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>更新策略也很重要：</span></span>
+<span class="line"><span>- 每次对话结束后，更新会话摘要</span></span>
+<span class="line"><span>- 定期将重要信息迁移到长期记忆</span></span>
+<span class="line"><span>- 用向量检索快速召回历史相关记忆</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br></div></div><h3 id="部署方案-工程能力的体现" tabindex="-1">部署方案：工程能力的体现 <a class="header-anchor" href="#部署方案-工程能力的体现" aria-label="Permalink to &quot;部署方案：工程能力的体现&quot;">​</a></h3><p>部署方案考察的是你的工程落地能力，很多从纯研究转过来的人这块比较薄弱。</p><div class="language- vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>面试题：你们RAG系统是怎么部署的？用了哪些技术？</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>参考答案：</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>我们系统的部署架构：</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>前端层：</span></span>
+<span class="line"><span>- Web端用React，移动端小程序</span></span>
+<span class="line"><span>- 调用后端API，做简单的限流和缓存</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>后端层：</span></span>
+<span class="line"><span>- FastAPI作为API网关</span></span>
+<span class="line"><span>- 主要处理请求路由、参数校验、响应格式化</span></span>
+<span class="line"><span>- 使用异步处理，提升并发能力</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>AI服务层：</span></span>
+<span class="line"><span>- RAG链路用LangChain实现</span></span>
+<span class="line"><span>- 模型服务：Embedding用本地部署，LLM用OpenAI API</span></span>
+<span class="line"><span>- 向量数据库用Qdrant，支持高并发检索</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>部署层：</span></span>
+<span class="line"><span>- Docker容器化，用docker-compose管理</span></span>
+<span class="line"><span>- 生产环境用K8s，支持弹性扩缩容</span></span>
+<span class="line"><span>- CI/CD用GitHub Actions，自动化部署</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>监控告警：</span></span>
+<span class="line"><span>- 用Prometheus采集指标，Grafana展示</span></span>
+<span class="line"><span>- 关键指标：请求量、延迟、错误率、Token消耗</span></span>
+<span class="line"><span>- 超过阈值自动告警</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br></div></div><div class="language- vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>面试题：如何优化RAG系统的响应延迟？</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>参考答案：</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>响应延迟主要来自三个环节，我分别优化：</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>1. 检索阶段（通常100-300ms）</span></span>
+<span class="line"><span>- 优化：向量化缓存、结果缓存</span></span>
+<span class="line"><span>- 对于高频Query，直接返回缓存结果</span></span>
+<span class="line"><span>- 延迟可以从200ms降到20ms</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>2. 重排序阶段（通常100-200ms）</span></span>
+<span class="line"><span>- 优化：用轻量级reranker，跳过不必要的结果</span></span>
+<span class="line"><span>- 或者延迟重排序——先生成，等结果返回再优化</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>3. 生成阶段（通常1-5s）</span></span>
+<span class="line"><span>- 优化：</span></span>
+<span class="line"><span>  - 开启流式输出，让用户看到生成过程</span></span>
+<span class="line"><span>  - 减少Prompt长度，降低LLM推理时间</span></span>
+<span class="line"><span>  - 用更快的模型（如GPT-4o比GPT-4快）</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>最终P99延迟从5s降到了1.5s，主要靠缓存+流式输出。</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br></div></div><hr><h2 id="_15-3-系统设计面试-如何设计一个xx系统" tabindex="-1">15.3 系统设计面试：如何设计一个XX系统 <a class="header-anchor" href="#_15-3-系统设计面试-如何设计一个xx系统" aria-label="Permalink to &quot;15.3 系统设计面试：如何设计一个XX系统&quot;">​</a></h2><h3 id="什么是系统设计面试" tabindex="-1">什么是系统设计面试 <a class="header-anchor" href="#什么是系统设计面试" aria-label="Permalink to &quot;什么是系统设计面试&quot;">​</a></h3><p>系统设计面试是技术岗面试的高阶环节，通常在二面或三面出现。面试官会给一个开放性题目，比如&quot;如何设计一个XXX系统&quot;，让你从零开始设计方案。</p><p>这类题没有标准答案，考察的是你的：</p><ul><li>需求分析能力：能不能搞清楚真正要解决的问题</li><li>技术选型能力：能不能权衡各种方案的优劣</li><li>系统思维：能不能从整体视角设计架构</li><li>沟通能力：能不能清晰表达你的想法</li></ul><p>很多人遇到这类题会慌，因为不知道从何下手。下面给你一个万能框架。</p><h3 id="系统设计四步法" tabindex="-1">系统设计四步法 <a class="header-anchor" href="#系统设计四步法" aria-label="Permalink to &quot;系统设计四步法&quot;">​</a></h3><p><strong>第一步：需求澄清</strong></p><p>不要急着画图，先问清楚几个关键问题：</p><div class="language- vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>面试官：设计一个企业知识库问答系统。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>你的回应：</span></span>
+<span class="line"><span>&quot;在开始设计之前，我想先确认几个问题：</span></span>
+<span class="line"><span>1. 知识库的规模大概多大？是几百份文档还是几万份？</span></span>
+<span class="line"><span>2. 用户场景是什么？是员工自助查询还是客服辅助？</span></span>
+<span class="line"><span>3. 对准确率的要求有多高？能容忍一定的错误吗？</span></span>
+<span class="line"><span>4. 并发量大概多少？有没有实时性要求？</span></span>
+<span class="line"><span>5. 有没有成本限制？用开源还是商业方案？&quot;</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><p>需求澄清是展示你工程经验的机会。有经验的人会先问清楚再动手，而不是一上来就画图。</p><p><strong>第二步：高层设计</strong></p><p>画出系统架构图，说清楚各个模块：</p><div class="language- vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>                    ┌─────────────┐</span></span>
+<span class="line"><span>                    │   用户界面   │</span></span>
+<span class="line"><span>                    │  Web/小程序  │</span></span>
+<span class="line"><span>                    └──────┬──────┘</span></span>
+<span class="line"><span>                           │</span></span>
+<span class="line"><span>                    ┌──────▼──────┐</span></span>
+<span class="line"><span>                    │   API网关   │</span></span>
+<span class="line"><span>                    │   FastAPI   │</span></span>
+<span class="line"><span>                    └──────┬──────┘</span></span>
+<span class="line"><span>                           │</span></span>
+<span class="line"><span>         ┌─────────────────┼─────────────────┐</span></span>
+<span class="line"><span>         │                 │                 │</span></span>
+<span class="line"><span>   ┌─────▼─────┐    ┌─────▼─────┐    ┌─────▼─────┐</span></span>
+<span class="line"><span>   │   检索引擎 │    │  生成引擎 │    │  监控日志  │</span></span>
+<span class="line"><span>   │   Qdrant  │    │  GPT-4    │    │  Prometheus│</span></span>
+<span class="line"><span>   └─────┬─────┘    └─────┬─────┘    └───────────┘</span></span>
+<span class="line"><span>         │                 │</span></span>
+<span class="line"><span>   ┌─────▼─────────────────▼─────┐</span></span>
+<span class="line"><span>   │         知识库管理后台       │</span></span>
+<span class="line"><span>   │   文档上传 / 切分 / 索引构建  │</span></span>
+<span class="line"><span>   └─────────────────────────────┘</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br></div></div><p><strong>第三步：核心模块设计</strong></p><p>重点讲你最熟悉、最能展示深度的部分：</p><div class="language- vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>&quot;核心模块有三个：</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>1. 文档处理管道</span></span>
+<span class="line"><span>   - 支持PDF、Word、Markdown多格式</span></span>
+<span class="line"><span>   - 用unstructured库做文档解析</span></span>
+<span class="line"><span>   - 切分策略：递归字符切分+标题锚点</span></span>
+<span class="line"><span>   - 异步处理，支持批量导入</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>2. 检索引擎</span></span>
+<span class="line"><span>   - 向量检索：Qdrant，1024维BGE-M3向量</span></span>
+<span class="line"><span>   - 关键词检索：BM25，用Weaviate内置能力</span></span>
+<span class="line"><span>   - 混合检索+RRF融合排序</span></span>
+<span class="line"><span>   - 重排序：BAAI/bge-reranker-v2-m3</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>3. 生成链路</span></span>
+<span class="line"><span>   - Prompt模板：问题+上下文+输出格式要求</span></span>
+<span class="line"><span>   - Few-shot示例：给2-3个问答样例</span></span>
+<span class="line"><span>   - 强制引用：要求模型标注答案来源</span></span>
+<span class="line"><span>&quot;</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br></div></div><p><strong>第四步：权衡取舍</strong></p><p>没有完美的方案，要说明你的trade-off：</p><div class="language- vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>&quot;有几个需要权衡的地方：</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>1. 准确率 vs 响应速度</span></span>
+<span class="line"><span>   - 重排序能提升准确率但增加延迟</span></span>
+<span class="line"><span>   - 我的选择：先用轻量reranker，上线后根据数据调整</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>2. 成本 vs 效果</span></span>
+<span class="line"><span>   - GPT-4效果最好但成本高</span></span>
+<span class="line"><span>   - 我的选择：简单问题用GPT-3.5，复杂问题用GPT-4</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>3. 灵活性 vs 复杂度</span></span>
+<span class="line"><span>   - 自己训练Embedding模型效果更好但成本高</span></span>
+<span class="line"><span>   - 我的选择：先用BGE-M3，有需要再微调</span></span>
+<span class="line"><span>&quot;</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><h3 id="常见系统设计题答题模板" tabindex="-1">常见系统设计题答题模板 <a class="header-anchor" href="#常见系统设计题答题模板" aria-label="Permalink to &quot;常见系统设计题答题模板&quot;">​</a></h3><p><strong>题目1：设计一个RAG系统</strong></p><div class="language- vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>核心要点：</span></span>
+<span class="line"><span>1. 离线索引：文档加载→清洗→切分→向量化→入库</span></span>
+<span class="line"><span>2. 在线检索：Query→向量化→向量检索→混合检索→重排序</span></span>
+<span class="line"><span>3. 在线生成：检索结果+Query→Prompt→LLM→后处理</span></span>
+<span class="line"><span>4. 关键优化：切分策略、检索策略、Prompt工程</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>避坑提示：</span></span>
+<span class="line"><span>- 不要只讲流程，要讲你踩过的坑和解决方案</span></span>
+<span class="line"><span>- 重点展示你做过的优化，而不是背书上的方案</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><p><strong>题目2：设计一个客服Agent</strong></p><div class="language- vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>核心要点：</span></span>
+<span class="line"><span>1. 意图识别：判断用户意图，决定走哪个流程</span></span>
+<span class="line"><span>2. 多轮对话管理：维护对话状态，支持上下文</span></span>
+<span class="line"><span>3. 工具设计：查订单、查物流、退换货等业务工具</span></span>
+<span class="line"><span>4. 兜底机制：AI处理不了时转人工</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>避坑提示：</span></span>
+<span class="line"><span>- 重点讲清楚决策流程和兜底机制</span></span>
+<span class="line"><span>- 这是真实项目经验的体现</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><p><strong>题目3：设计一个代码审查助手</strong></p><div class="language- vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>核心要点：</span></span>
+<span class="line"><span>1. 代码获取：从GitHub/GitLab拉取PR代码</span></span>
+<span class="line"><span>2. 代码分析：解析AST，理解代码结构</span></span>
+<span class="line"><span>3. 审查要点：安全性、性能、可读性、最佳实践</span></span>
+<span class="line"><span>4. 报告生成：输出结构化的审查意见</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>避坑提示：</span></span>
+<span class="line"><span>- 可以借鉴开源的代码分析工具</span></span>
+<span class="line"><span>- 重点讲清楚审查规则的实现逻辑</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><hr><h2 id="_15-4-行为面试-讲好你的转行故事" tabindex="-1">15.4 行为面试：讲好你的转行故事 <a class="header-anchor" href="#_15-4-行为面试-讲好你的转行故事" aria-label="Permalink to &quot;15.4 行为面试：讲好你的转行故事&quot;">​</a></h2><h3 id="行为面试的本质" tabindex="-1">行为面试的本质 <a class="header-anchor" href="#行为面试的本质" aria-label="Permalink to &quot;行为面试的本质&quot;">​</a></h3><p>行为面试看起来是在聊家常，实际上是在考察你的软实力：</p><ul><li>沟通表达能力：能不能把事情说清楚</li><li>逻辑思维：说话有没有条理</li><li>价值观：你的动机和追求是什么</li><li>抗压能力：遇到困难怎么应对</li><li>成长潜力：学习能力怎么样</li></ul><p>对于转行者来说，行为面试还有一层特殊意义：<strong>解释你为什么要转行，以及你凭什么能转成功</strong>。</p><h3 id="经典行为面试题及回答策略" tabindex="-1">经典行为面试题及回答策略 <a class="header-anchor" href="#经典行为面试题及回答策略" aria-label="Permalink to &quot;经典行为面试题及回答策略&quot;">​</a></h3><p><strong>题目1：自我介绍</strong></p><div class="language- vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>❌ 错误示范：</span></span>
+<span class="line"><span>&quot;我叫张三，毕业于XX大学，学的是机械专业。</span></span>
+<span class="line"><span>毕业后在XX公司做了3年技术支持，现在想转行做AI开发。</span></span>
+<span class="line"><span>我学过Python、LangChain、做过RAG项目，请多关照。&quot;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>✅ 正确示范：</span></span>
+<span class="line"><span>&quot;我叫张三，在机械行业做了3年技术支持。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>转行的契机是：工作中经常需要写技术文档，我发现用AI工具</span></span>
+<span class="line"><span>处理文档效率能提升好几倍，于是开始研究大模型应用。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>为了转行，我做了三件事：</span></span>
+<span class="line"><span>1. 自学了Python和AI开发框架，在GitHub上做了3个项目</span></span>
+<span class="line"><span>2. 重点学了RAG和Agent，用LangChain从0到1搭了一个企业</span></span>
+<span class="line"><span>   知识库问答系统，准确率达到87%</span></span>
+<span class="line"><span>3. 持续关注行业动态，每周读一篇论文或技术博客</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>我投这个岗位是因为我的技术背景+行业经验能形成互补——</span></span>
+<span class="line"><span>既懂AI技术，又懂传统行业的业务场景。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>这就是我，谢谢。&quot;</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br></div></div><p><strong>题目2：为什么转行做AI开发</strong></p><div class="language- vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>回答要点：真诚+有说服力+展示你已经行动了</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>&quot;主要有三个原因：</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>1. 兴趣驱动</span></span>
+<span class="line"><span>我在工作中接触到大模型后，非常兴奋，觉得这是能改变</span></span>
+<span class="line"><span>很多行业的技术。想从使用者变成创造者。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>2. 趋势判断</span></span>
+<span class="line"><span>我认为AI应用开发是未来的方向，就像10年前的移动互联网。</span></span>
+<span class="line"><span>早点入行，能积累先发优势。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>3. 能力匹配</span></span>
+<span class="line"><span>转行不是拍脑袋，我评估过：</span></span>
+<span class="line"><span>- 我的编程基础可以迁移</span></span>
+<span class="line"><span>- 我的行业经验反而是优势</span></span>
+<span class="line"><span>- 我已经做了充分准备（项目、博客、持续学习）</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>我选择AI开发而不是纯算法，是因为我更喜欢做应用落地，</span></span>
+<span class="line"><span>而不是研究模型本身。这个岗位正好符合我的定位。&quot;</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br></div></div><p><strong>题目3：你的缺点是什么</strong></p><div class="language- vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>这道题是陷阱题，考的是你的自我认知和诚实度。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>❌ 错误示范：</span></span>
+<span class="line"><span>&quot;我的缺点是太追求完美&quot;/&quot;我太努力了&quot;（假大空）</span></span>
+<span class="line"><span>&quot;我编程基础不够扎实&quot;/&quot;我没做过大项目&quot;（踩雷）</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>✅ 正确示范：</span></span>
+<span class="line"><span>&quot;我的缺点是对底层原理理解不够深。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>之前做项目更多是&#39;能用就行&#39;，没有深入研究为什么。</span></span>
+<span class="line"><span>比如RAG的检索机制，我知道怎么调参效果好，</span></span>
+<span class="line"><span>但对向量空间数学原理理解不够。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>我已经意识到这个问题，最近在补《统计学习方法》，</span></span>
+<span class="line"><span>同时跟着李沐的paper reading课程学习。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>我认为应用能力和理论基础都很重要，</span></span>
+<span class="line"><span>我现在在努力补齐这块短板。&quot;</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br></div></div><p><strong>题目4：你的职业规划是什么</strong></p><div class="language- vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>回答要点：务实+有野心+和公司发展匹配</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>&quot;未来3年，我的规划是：</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>1-2年：深耕AI应用开发，成为团队骨干</span></span>
+<span class="line"><span>- 精通RAG、Agent等核心技术</span></span>
+<span class="line"><span>- 独立负责项目从0到1落地</span></span>
+<span class="line"><span>- 建立自己的技术影响力（博客、开源）</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>3-5年：成为技术专家或技术管理</span></span>
+<span class="line"><span>- 方向1：深入某个垂直领域（如客服、知识管理）</span></span>
+<span class="line"><span>  成为能独立带项目的技术专家</span></span>
+<span class="line"><span>- 方向2：转向技术管理，带小团队</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>长期：我希望能在AI应用领域深耕，</span></span>
+<span class="line"><span>未来有机会参与AI产品的设计和创新。&quot;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>避坑：不要说&quot;5年当CTO&quot;这种不切实际的话</span></span>
+<span class="line"><span>不要说&quot;看公司安排&quot;这种没有主见的话</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br></div></div><h3 id="转行故事的正确讲法" tabindex="-1">转行故事的正确讲法 <a class="header-anchor" href="#转行故事的正确讲法" aria-label="Permalink to &quot;转行故事的正确讲法&quot;">​</a></h3><p>对于转行者来说，最重要的一个问题是：&quot;你之前不是做这个的，为什么我们要选你？&quot;</p><p>回答这个问题的关键是：<strong>把劣势变成优势</strong>。</p><div class="language- vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>&quot;我的背景确实和别人不一样，但这恰恰是我的优势：</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>1. 跨行业视角</span></span>
+<span class="line"><span>我在传统行业做了X年，深刻理解行业的痛点和需求。</span></span>
+<span class="line"><span>AI应用落地的难点往往不在技术本身，而在于理解业务。</span></span>
+<span class="line"><span>我有这个先天优势。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>2. 学习能力</span></span>
+<span class="line"><span>转行本身就是对学习能力的证明。我用X个月自学了</span></span>
+<span class="line"><span>Python、LangChain、RAG，从0到1做了X个项目。</span></span>
+<span class="line"><span>这证明我能快速掌握新技术。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>3. 落地能力</span></span>
+<span class="line"><span>我不只是懂技术，还能站在用户角度思考问题。</span></span>
+<span class="line"><span>之前的项目能获得业务方认可，就是因为技术方案</span></span>
+<span class="line"><span>解决了真实问题。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>4. 稳定性</span></span>
+<span class="line"><span>我转行是深思熟虑的，不是冲动。</span></span>
+<span class="line"><span>我已经想清楚要在这个方向深耕，不会轻易动摇。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>综上，虽然我是转行的，但我有独特价值。&quot;</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br></div></div><h3 id="反问环节-该问什么" tabindex="-1">反问环节：该问什么 <a class="header-anchor" href="#反问环节-该问什么" aria-label="Permalink to &quot;反问环节：该问什么&quot;">​</a></h3><p>面试最后通常会有&quot;你有什么问题要问我&quot;的环节。这个环节很重要，问得好能加分，问得不好会减分。</p><p><strong>✅ 应该问的问题：</strong></p><div class="language- vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>技术相关：</span></span>
+<span class="line"><span>- &quot;这个岗位日常工作用到的技术栈是什么？&quot;</span></span>
+<span class="line"><span>- &quot;团队现在面临的技术挑战是什么？&quot;</span></span>
+<span class="line"><span>- &quot;新人在团队中的成长路径是怎样的？&quot;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>团队相关：</span></span>
+<span class="line"><span>- &quot;团队有多少人？怎么分工的？&quot;</span></span>
+<span class="line"><span>- &quot;团队的技术氛围怎么样？有没有技术分享？&quot;</span></span>
+<span class="line"><span>- &quot;汇报对象是技术leader还是产品？&quot;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>项目相关：</span></span>
+<span class="line"><span>- &quot;入职后我会参与什么项目？&quot;</span></span>
+<span class="line"><span>- &quot;项目的技术选型是怎么定的？&quot;</span></span>
+<span class="line"><span>- &quot;项目周期和迭代节奏是怎样的？&quot;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>发展相关：</span></span>
+<span class="line"><span>- &quot;这个岗位的晋升通道是什么？&quot;</span></span>
+<span class="line"><span>- &quot;公司对AI开发的投入和规划是什么？&quot;</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br></div></div><p><strong>❌ 不该问的问题：</strong></p><div class="language- vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>- &quot;加班多不多？&quot;（显得你不想付出）</span></span>
+<span class="line"><span>- &quot;工资多少？&quot;（这是HR面该谈的）</span></span>
+<span class="line"><span>- &quot;能不能远程？&quot;（显得你没有诚意）</span></span>
+<span class="line"><span>- &quot;能不能少加班/弹性工作？&quot;（同上）</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><hr><h2 id="_15-5-常见面试题与参考答案" tabindex="-1">15.5 常见面试题与参考答案 <a class="header-anchor" href="#_15-5-常见面试题与参考答案" aria-label="Permalink to &quot;15.5 常见面试题与参考答案&quot;">​</a></h2><h3 id="rag相关-高频" tabindex="-1">RAG相关（高频） <a class="header-anchor" href="#rag相关-高频" aria-label="Permalink to &quot;RAG相关（高频）&quot;">​</a></h3><p><strong>Q1: RAG的核心流程是什么？</strong></p><div class="language- vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>RAG分为三个阶段：</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>1. 索引阶段（离线）：</span></span>
+<span class="line"><span>   文档加载 → 文档清洗 → 文本切分 → 向量化 → 存入向量数据库</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>2. 检索阶段（在线）：</span></span>
+<span class="line"><span>   用户问题 → Query向量化 → 向量检索 → 混合检索 → 重排序 → Top-K</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>3. 生成阶段（在线）：</span></span>
+<span class="line"><span>   检索结果 + 用户问题 → 组装Prompt → LLM生成 → 后处理 → 返回答案</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>面试加分点：主动说出每个环节的优化策略，</span></span>
+<span class="line"><span>比如切分策略用递归字符、检索用混合检索+重排序等。</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><p><strong>Q2: RAG和微调的区别是什么？什么时候用RAG？什么时候用微调？</strong></p><div class="language- vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>核心区别：</span></span>
+<span class="line"><span>- RAG：不动模型参数，通过外部检索获取知识</span></span>
+<span class="line"><span>- 微调：通过训练调整模型参数，内化知识</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>选择策略：</span></span>
+<span class="line"><span>用RAG的场景：</span></span>
+<span class="line"><span>- 知识需要频繁更新（如行业动态、产品手册）</span></span>
+<span class="line"><span>- 知识量很大（如企业文档库）</span></span>
+<span class="line"><span>- 需要可解释性（能追踪到具体文档）</span></span>
+<span class="line"><span>- 数据隐私敏感（不想喂给模型训练）</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>用微调的场景：</span></span>
+<span class="line"><span>- 知识相对稳定</span></span>
+<span class="line"><span>- 需要改变模型的输出风格/格式</span></span>
+<span class="line"><span>- 数据量适中，有高质量标注数据</span></span>
+<span class="line"><span>- 延迟敏感，不希望有检索开销</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>实际上很多场景会两者结合：RAG+微调，取长补短。</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br></div></div><p><strong>Q3: 如何评估RAG系统的效果？</strong></p><div class="language- vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>评估RAG通常从三个维度：</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>1. 检索指标</span></span>
+<span class="line"><span>- 召回率（Recall@K）：相关文档被召回的比例</span></span>
+<span class="line"><span>- 准确率（Precision@K）：召回的文档有多少是相关的</span></span>
+<span class="line"><span>- MRR（Mean Reciprocal Rank）：第一个相关文档的排名</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>2. 生成指标</span></span>
+<span class="line"><span>- 答案准确率：答案是否正确（人工评估或用LLM评估）</span></span>
+<span class="line"><span>- 幻觉率：答案是否包含不存在的信息</span></span>
+<span class="line"><span>- 引用准确率：引用的文档是否真的相关</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>3. 端到端指标</span></span>
+<span class="line"><span>- 用户满意度</span></span>
+<span class="line"><span>- 问题解决率</span></span>
+<span class="line"><span>- 人工介入率</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>我的经验：先用检索指标快速迭代，最后做端到端评估。</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br></div></div><p><strong>Q4: RAG的幻觉问题怎么解决？</strong></p><div class="language- vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>五层防护体系：</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>1. 检索增强层</span></span>
+<span class="line"><span>   确保检索到相关且正确的知识——源头不对后面全白搭</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>2. 引用溯源层</span></span>
+<span class="line"><span>   要求LLM回答时标注引用来源（&quot;根据文档X第Y段&quot;）</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>3. 事实校验层</span></span>
+<span class="line"><span>   用专门的校验Agent检查答案中的每个事实陈述</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>4. 置信度标注层</span></span>
+<span class="line"><span>   答案附带置信度标签（高/中/低），让用户知道靠谱程度</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>5. 用户反馈层</span></span>
+<span class="line"><span>   用户可以反馈&quot;答案有误&quot;，系统记录用于优化</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>核心原则：宁可说&quot;知识库中未找到相关信息&quot;，也不编造。</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br></div></div><h3 id="agent相关-高频" tabindex="-1">Agent相关（高频） <a class="header-anchor" href="#agent相关-高频" aria-label="Permalink to &quot;Agent相关（高频）&quot;">​</a></h3><p><strong>Q5: 什么是AI Agent？它和Chatbot的区别是什么？</strong></p><div class="language- vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>Agent = 大模型 + 规划 + 记忆 + 工具</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Chatbot的流程：输入 → LLM推理 → 输出文本 → 结束</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Agent的流程：</span></span>
+<span class="line"><span>输入 → LLM推理 → 选择工具 → 执行工具 → 观察结果 → </span></span>
+<span class="line"><span>决定下一步 → 循环直到目标达成</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>核心区别：</span></span>
+<span class="line"><span>- Chatbot是被动的，用户问什么答什么</span></span>
+<span class="line"><span>- Agent是主动的，能自主规划、执行、调整</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>以客服场景为例：</span></span>
+<span class="line"><span>Chatbot只能回答问题；Agent能帮用户查订单、退货、</span></span>
+<span class="line"><span>申请售后，并判断是否需要人工介入。</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><p><strong>Q6: 如何设计Agent的Tool？</strong></p><div class="language- vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>Tool设计的核心要素：</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>1. 清晰的描述</span></span>
+<span class="line"><span>   - 名称：动词短语，如&quot;查询订单&quot;</span></span>
+<span class="line"><span>   - 描述：什么情况下使用，尽量具体</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>2. 规范的参数</span></span>
+<span class="line"><span>   - 定义清晰的JSON Schema</span></span>
+<span class="line"><span>   - 必填/可选参数区分</span></span>
+<span class="line"><span>   - 参数校验和错误提示</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>3. 完善的异常处理</span></span>
+<span class="line"><span>   - 网络超时：重试机制</span></span>
+<span class="line"><span>   - 业务异常：返回明确错误码</span></span>
+<span class="line"><span>   - 未知异常：降级策略</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>示例：</span></span>
+<span class="line"><span>{</span></span>
+<span class="line"><span>  &quot;name&quot;: &quot;query_order&quot;,</span></span>
+<span class="line"><span>  &quot;description&quot;: &quot;查询用户订单状态，适用于用户问&quot;我的订单到哪了&quot;等场景&quot;,</span></span>
+<span class="line"><span>  &quot;parameters&quot;: {</span></span>
+<span class="line"><span>    &quot;order_id&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;required&quot;: true},</span></span>
+<span class="line"><span>    &quot;user_id&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;required&quot;: true}</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span>}</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br></div></div><p><strong>Q7: Agent如何避免陷入死循环？</strong></p><div class="language- vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>死循环的原因和解决方案：</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>1. 终止条件缺失</span></span>
+<span class="line"><span>   解决：设置明确的目标达成条件和最大迭代次数</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>2. 工具选择反复</span></span>
+<span class="line"><span>   解决：记录已使用的工具，避免重复调用</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>3. 状态无变化</span></span>
+<span class="line"><span>   解决：检测&quot;当前状态 vs 上次状态&quot;，无变化则终止</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>4. 错误重试过多</span></span>
+<span class="line"><span>   解决：设置最大重试次数，超限则转人工</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>代码层面的处理：</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>MAX_ITERATIONS = 10</span></span>
+<span class="line"><span>iteration = 0</span></span>
+<span class="line"><span>last_result = None</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>while iteration &lt; MAX_ITERATIONS:</span></span>
+<span class="line"><span>    result = execute_step(...)</span></span>
+<span class="line"><span>    if is_goal_reached(result):</span></span>
+<span class="line"><span>        return result</span></span>
+<span class="line"><span>    if result == last_result:</span></span>
+<span class="line"><span>        return &quot;无法完成任务，转人工&quot;</span></span>
+<span class="line"><span>    last_result = result</span></span>
+<span class="line"><span>    iteration += 1</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br></div></div><h3 id="系统设计相关" tabindex="-1">系统设计相关 <a class="header-anchor" href="#系统设计相关" aria-label="Permalink to &quot;系统设计相关&quot;">​</a></h3><p><strong>Q8: 如何设计一个企业知识库问答系统？</strong></p><div class="language- vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>核心架构分三层：</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>1. 离线索引层</span></span>
+<span class="line"><span>   - 文档处理：PDF解析、Word转换、网页抓取</span></span>
+<span class="line"><span>   - 切分策略：递归字符切分+标题锚点</span></span>
+<span class="line"><span>   - 向量化：BGE-M3，1024维</span></span>
+<span class="line"><span>   - 存储：Qdrant向量数据库</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>2. 在线推理层</span></span>
+<span class="line"><span>   - 意图识别：简单查询 vs 复杂问题</span></span>
+<span class="line"><span>   - 检索：混合检索（向量+BM25）+ RRF + 重排序</span></span>
+<span class="line"><span>   - 生成：组装Prompt → LLM → 引用标注</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>3. 应用层</span></span>
+<span class="line"><span>   - 多渠道接入：Web、企微、钉钉</span></span>
+<span class="line"><span>   - 用户反馈：点赞/点踩，持续优化</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>关键指标：</span></span>
+<span class="line"><span>- Top5召回率：89%</span></span>
+<span class="line"><span>- P99延迟：1.5s</span></span>
+<span class="line"><span>- 日均请求：5000+</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br></div></div><p><strong>Q9: 如果线上RAG系统召回率突然下降，怎么排查？</strong></p><div class="language- vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>排查思路：从数据到系统的逆向排查</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>1. 检查知识库数据</span></span>
+<span class="line"><span>   - 文档是否被删除或更新？</span></span>
+<span class="line"><span>   - 新增文档是否正确入库？</span></span>
+<span class="line"><span>   - 数据同步延迟？</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>2. 检查检索配置</span></span>
+<span class="line"><span>   - Embedding模型是否更换？</span></span>
+<span class="line"><span>   - 向量数据库是否正常？</span></span>
+<span class="line"><span>   - 检索参数是否被修改？</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>3. 检查Query特征</span></span>
+<span class="line"><span>   - 是否有新的Query类型？</span></span>
+<span class="line"><span>   - Query是否有噪声（如特殊字符）？</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>4. 分层测试定位</span></span>
+<span class="line"><span>   - 固定Query，测试检索</span></span>
+<span class="line"><span>   - 固定检索结果，测试生成</span></span>
+<span class="line"><span>   - 逐步缩小问题范围</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>我的经验：80%的问题出在数据层，先检查知识库。</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br></div></div><h3 id="软技能相关" tabindex="-1">软技能相关 <a class="header-anchor" href="#软技能相关" aria-label="Permalink to &quot;软技能相关&quot;">​</a></h3><p><strong>Q10: 你最有成就感的一个项目是什么？</strong></p><div class="language- vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>回答框架：STAR法则</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>S（背景）：项目背景是什么，为什么要做</span></span>
+<span class="line"><span>T（任务）：你负责什么，遇到什么挑战</span></span>
+<span class="line"><span>A（行动）：你具体做了什么，思路是什么</span></span>
+<span class="line"><span>R（结果）：带来了什么效果，最好有数据</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>示例：</span></span>
+<span class="line"><span>&quot;最有成就感的是我做的企业知识库RAG系统。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>（背景）当时公司客服培训周期长，新人要2周才能上手，</span></span>
+<span class="line"><span>而且很多重复问题占用人工。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>（任务）我的任务是搭建一个知识库问答系统，</span></span>
+<span class="line"><span>让AI能回答员工和客户的常见问题。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>（行动）我做了三件事：</span></span>
+<span class="line"><span>1. 设计了文档切分策略，对比了5种方案后选递归字符切分</span></span>
+<span class="line"><span>2. 引入混合检索+重排序，把召回率从60%提升到89%</span></span>
+<span class="line"><span>3. 做了效果评估体系，持续优化</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>（结果）系统上线3个月，日均处理2000+咨询，</span></span>
+<span class="line"><span>客服培训周期从2周缩短到3天，AI独立回答率62%。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>这个项目让我真正理解了什么叫&#39;技术落地&#39;。&quot;</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br></div></div><hr><h2 id="行动清单" tabindex="-1">行动清单 <a class="header-anchor" href="#行动清单" aria-label="Permalink to &quot;行动清单&quot;">​</a></h2><p>恭喜你读完这章！下面是今天的行动计划：</p><h3 id="今天-面试前1周" tabindex="-1">今天（面试前1周） <a class="header-anchor" href="#今天-面试前1周" aria-label="Permalink to &quot;今天（面试前1周）&quot;">​</a></h3><ul><li>[ ] 梳理3个核心项目，用STAR法则准备回答</li><li>[ ] 默写RAG、Agent的核心概念，确保流利表达</li><li>[ ] 在心里预演常见面试问题，准备好答案</li></ul><h3 id="本周-面试冲刺" tabindex="-1">本周（面试冲刺） <a class="header-anchor" href="#本周-面试冲刺" aria-label="Permalink to &quot;本周（面试冲刺）&quot;">​</a></h3><ul><li>[ ] 收集目标公司的面试题（牛客、脉脉、看准网）</li><li>[ ] 做2-3次模拟面试（找朋友或对着镜子）</li><li>[ ] 准备反问环节的问题清单</li><li>[ ] 准备好转行故事，练习3遍以上</li></ul><h3 id="面试中" tabindex="-1">面试中 <a class="header-anchor" href="#面试中" aria-label="Permalink to &quot;面试中&quot;">​</a></h3><ul><li>[ ] 技术面：先说思路，再说代码</li><li>[ ] 系统设计：先澄清需求，再画架构</li><li>[ ] 行为面：真诚+展示你的行动和成长</li><li>[ ] 反问：问技术、问团队、问发展</li></ul><h3 id="面试后" tabindex="-1">面试后 <a class="header-anchor" href="#面试后" aria-label="Permalink to &quot;面试后&quot;">​</a></h3><ul><li>[ ] 记录被问到的问题和回答（用于复盘）</li><li>[ ] 复盘：哪里答得好，哪里需要改进</li><li>[ ] 如果没通过：总结经验，继续投递</li></ul><hr><p><strong>最后说一句</strong>：面试是技能，需要刻意练习。不要怕被问倒，每次失败都是进步的机会。</p><p>祝大家都能拿到心仪的Offer！🚀</p></div></div></main><footer class="VPDocFooter" data-v-39a288b8 data-v-e257564d><!--[--><!--]--><div class="edit-info" data-v-e257564d><div class="edit-link" data-v-e257564d><a class="VPLink link vp-external-link-icon no-icon edit-link-button" href="https://github.com/jnlk-cn/jumpstart-ai/edit/main/docs/zh/part5-career/chapter17.md" target="_blank" rel="noreferrer" data-v-e257564d><!--[--><span class="vpi-square-pen edit-link-icon" data-v-e257564d></span> 在 GitHub 上编辑此页<!--]--></a></div><div class="last-updated" data-v-e257564d><p class="VPLastUpdated" data-v-e257564d data-v-e98dd255>最后更新于: <time datetime="2026-05-25T01:29:25.000Z" data-v-e98dd255></time></p></div></div><nav class="prev-next" aria-labelledby="doc-footer-aria-label" data-v-e257564d><span class="visually-hidden" id="doc-footer-aria-label" data-v-e257564d>Pager</span><div class="pager" data-v-e257564d><a class="VPLink link pager-link prev" href="/jumpstart-ai/zh/part5-career/chapter16.html" data-v-e257564d><!--[--><span class="desc" data-v-e257564d>上一篇</span><span class="title" data-v-e257564d>第16章 简历与作品集</span><!--]--></a></div><div class="pager" data-v-e257564d><a class="VPLink link pager-link next" href="/jumpstart-ai/zh/part5-career/chapter18.html" data-v-e257564d><!--[--><span class="desc" data-v-e257564d>下一篇</span><span class="title" data-v-e257564d>第18章 入职前30天快速站稳</span><!--]--></a></div></nav></footer><!--[--><!--]--></div></div></div><!--[--><!--]--></div></div><footer class="VPFooter has-sidebar" data-v-5d98c3a5 data-v-e315a0ad><div class="container" data-v-e315a0ad><p class="message" data-v-e315a0ad>基于 MIT 许可证发布</p><p class="copyright" data-v-e315a0ad>Copyright © 2024-present jnlk-cn</p></div></footer><!--[--><!--]--></div></div>
+    <script>window.__VP_HASH_MAP__=JSON.parse("{\"en_appendix_appendix-a.md\":\"vM9BHYMv\",\"en_appendix_appendix-b.md\":\"D5aPVkJR\",\"en_appendix_appendix-c.md\":\"Dp6Jx1U6\",\"en_appendix_appendix-d.md\":\"CyNKKHlz\",\"en_appendix_appendix-e.md\":\"DQrmDWVt\",\"en_chapter1.md\":\"sSnbVUN5\",\"en_chapter10.md\":\"DWMVLXWO\",\"en_chapter11.md\":\"OEO55mIj\",\"en_chapter12.md\":\"D76we24J\",\"en_chapter13.md\":\"BuX81-u4\",\"en_chapter14.md\":\"Dy3A2AMR\",\"en_chapter15.md\":\"8Sy8Lmof\",\"en_chapter16.md\":\"CXhtY1DY\",\"en_chapter17.md\":\"BNdgCDLR\",\"en_chapter18.md\":\"B3xdFBm2\",\"en_chapter19.md\":\"BaxJC4D3\",\"en_chapter2.md\":\"C2nfDA4q\",\"en_chapter20.md\":\"CsH-ySqJ\",\"en_chapter3.md\":\"Bd_e6BzT\",\"en_chapter4.md\":\"BIXQ5G31\",\"en_chapter5.md\":\"CWQOHTql\",\"en_chapter6.md\":\"CkTZWEUr\",\"en_chapter7.md\":\"C9jyE6-f\",\"en_chapter8.md\":\"D8TG03LG\",\"en_chapter9.md\":\"fPiGwVzq\",\"en_index.md\":\"B5SGj-Xz\",\"en_part1-cognition_chapter1.md\":\"Ds6PDgE7\",\"en_part1-cognition_chapter2.md\":\"BfZxVP2t\",\"en_part1-cognition_chapter3.md\":\"BgsucsD7\",\"en_part2-fundamentals_chapter4.md\":\"BwFf6cPO\",\"en_part2-fundamentals_chapter5.md\":\"BveL-JHX\",\"en_part2-fundamentals_chapter6.md\":\"DqoGgPno\",\"en_part2-fundamentals_chapter7.md\":\"Bvi4Yotd\",\"en_part3-practice_chapter10.md\":\"Oh_BZYAy\",\"en_part3-practice_chapter11.md\":\"ShJ4Ci4h\",\"en_part3-practice_chapter12.md\":\"BfLOh98t\",\"en_part3-practice_chapter8.md\":\"BSJa5b1o\",\"en_part3-practice_chapter9.md\":\"D235JS1N\",\"en_part4-advanced_chapter13.md\":\"BtYJrPil\",\"en_part4-advanced_chapter14.md\":\"B1E1JgJs\",\"en_part4-advanced_chapter15.md\":\"B4HdJ8vI\",\"en_part5-career_chapter16.md\":\"BiZEnHpN\",\"en_part5-career_chapter17.md\":\"BWaqGeW1\",\"en_part5-career_chapter18.md\":\"CfLmg_AO\",\"en_part5-career_chapter19.md\":\"DWphSwiY\",\"en_part5-career_chapter20.md\":\"Dm5OtpxR\",\"ja_appendix_appendix-a.md\":\"OW7-wJcQ\",\"ja_appendix_appendix-b.md\":\"DEDuw6g7\",\"ja_appendix_appendix-c.md\":\"BbIVJNjB\",\"ja_appendix_appendix-d.md\":\"CCd3dDM2\",\"ja_appendix_appendix-e.md\":\"BGGnUn5n\",\"ja_chapter1.md\":\"Cfp-nehy\",\"ja_chapter10.md\":\"9pRcnddT\",\"ja_chapter11.md\":\"CP6PQsap\",\"ja_chapter12.md\":\"BlqIY2Kr\",\"ja_chapter13.md\":\"BYoFuVBI\",\"ja_chapter14.md\":\"YdqRF2_m\",\"ja_chapter15.md\":\"DIl3A9Ou\",\"ja_chapter16.md\":\"CuxJyEwH\",\"ja_chapter17.md\":\"CH2YDWJx\",\"ja_chapter18.md\":\"DO5WhVF4\",\"ja_chapter19.md\":\"lJTntmFc\",\"ja_chapter2.md\":\"DqV0bNKR\",\"ja_chapter20.md\":\"49j6KP3c\",\"ja_chapter3.md\":\"DFTC_wLJ\",\"ja_chapter4.md\":\"DXYqlOj6\",\"ja_chapter5.md\":\"BRyjMYni\",\"ja_chapter6.md\":\"CK7aQnKl\",\"ja_chapter7.md\":\"DcvyYRcr\",\"ja_chapter8.md\":\"DKejk_nM\",\"ja_chapter9.md\":\"BBWvA4ae\",\"ja_index.md\":\"B7msAEvF\",\"ja_part1-cognition_chapter1.md\":\"BQUV-ptB\",\"ja_part1-cognition_chapter2.md\":\"BOZGU94Q\",\"ja_part1-cognition_chapter3.md\":\"Bifeu7lk\",\"ja_part2-fundamentals_chapter4.md\":\"Dkqt_Sip\",\"ja_part2-fundamentals_chapter5.md\":\"CNJtpMUs\",\"ja_part2-fundamentals_chapter6.md\":\"xfGSa6nl\",\"ja_part2-fundamentals_chapter7.md\":\"DPgolRIb\",\"ja_part3-practice_chapter10.md\":\"DUxgpnSH\",\"ja_part3-practice_chapter11.md\":\"DftOycYM\",\"ja_part3-practice_chapter12.md\":\"AWntJHin\",\"ja_part3-practice_chapter8.md\":\"DUs6wbdx\",\"ja_part3-practice_chapter9.md\":\"B1yLTbVX\",\"ja_part4-advanced_chapter13.md\":\"sgc8y3vn\",\"ja_part4-advanced_chapter14.md\":\"DRqLZJ9P\",\"ja_part4-advanced_chapter15.md\":\"DaqkUPCD\",\"ja_part5-career_chapter16.md\":\"CSvCks1r\",\"ja_part5-career_chapter17.md\":\"B4_jjTm6\",\"ja_part5-career_chapter18.md\":\"BYjwDSx3\",\"ja_part5-career_chapter19.md\":\"DqfvzU7q\",\"ja_part5-career_chapter20.md\":\"D0O8GIE_\",\"ko_appendix_appendix-a.md\":\"DF-iZur1\",\"ko_appendix_appendix-b.md\":\"L49xFIR0\",\"ko_appendix_appendix-c.md\":\"XGVCtSEI\",\"ko_appendix_appendix-d.md\":\"DBAtCimC\",\"ko_appendix_appendix-e.md\":\"BXNzQH4J\",\"ko_chapter1.md\":\"COmKgH0h\",\"ko_chapter10.md\":\"Bo_2tIW8\",\"ko_chapter11.md\":\"CXOcij_O\",\"ko_chapter12.md\":\"C1bFlOys\",\"ko_chapter13.md\":\"O-axvFoP\",\"ko_chapter14.md\":\"TbFS7LU9\",\"ko_chapter15.md\":\"BVPBRWlI\",\"ko_chapter16.md\":\"D0ytJbXN\",\"ko_chapter17.md\":\"D3oCYkwe\",\"ko_chapter18.md\":\"BaTMuoby\",\"ko_chapter19.md\":\"oCmthcjN\",\"ko_chapter2.md\":\"bYtm7Km6\",\"ko_chapter20.md\":\"DQlZvQx3\",\"ko_chapter3.md\":\"Ds_AOSQ6\",\"ko_chapter4.md\":\"CKv2P8jN\",\"ko_chapter5.md\":\"XZTJwFb3\",\"ko_chapter6.md\":\"sTGgWVMO\",\"ko_chapter7.md\":\"DGkRsWct\",\"ko_chapter8.md\":\"CkQ0VPbp\",\"ko_chapter9.md\":\"B96gtkdj\",\"ko_index.md\":\"DxFJvBsn\",\"ko_part1-cognition_chapter1.md\":\"DB_wbLeK\",\"ko_part1-cognition_chapter2.md\":\"DcVR2Vba\",\"ko_part1-cognition_chapter3.md\":\"e_YLzVap\",\"ko_part2-fundamentals_chapter4.md\":\"C7wFj-Im\",\"ko_part2-fundamentals_chapter5.md\":\"D-rPggFw\",\"ko_part2-fundamentals_chapter6.md\":\"BPCCoW47\",\"ko_part2-fundamentals_chapter7.md\":\"CmVOF4ur\",\"ko_part3-practice_chapter10.md\":\"fvPzYD_v\",\"ko_part3-practice_chapter11.md\":\"2vUsTxu2\",\"ko_part3-practice_chapter12.md\":\"D-CC6dd3\",\"ko_part3-practice_chapter8.md\":\"CkWd0ULu\",\"ko_part3-practice_chapter9.md\":\"BxM0cPb7\",\"ko_part4-advanced_chapter13.md\":\"DndvrGBY\",\"ko_part4-advanced_chapter14.md\":\"DpByxjRK\",\"ko_part4-advanced_chapter15.md\":\"Ba2LTC7b\",\"ko_part5-career_chapter16.md\":\"DefnJxyv\",\"ko_part5-career_chapter17.md\":\"2Nknyzm8\",\"ko_part5-career_chapter18.md\":\"Bl61ma2H\",\"ko_part5-career_chapter19.md\":\"CO0fuegB\",\"ko_part5-career_chapter20.md\":\"BnKTBFb1\",\"zh_appendix_appendix-a.md\":\"BpbBMeM1\",\"zh_appendix_appendix-b.md\":\"Cw3D_MgB\",\"zh_appendix_appendix-c.md\":\"B9rMKqaP\",\"zh_appendix_appendix-d.md\":\"DmC08KAy\",\"zh_appendix_appendix-e.md\":\"DPIxQn8X\",\"zh_index.md\":\"MiU5keWj\",\"zh_part1-cognition_chapter1.md\":\"CD65SUrF\",\"zh_part1-cognition_chapter2.md\":\"7JOaS7qy\",\"zh_part1-cognition_chapter3.md\":\"DWeYd-KI\",\"zh_part2-fundamentals_chapter4.md\":\"B1muRVyl\",\"zh_part2-fundamentals_chapter5.md\":\"_nxQZdcK\",\"zh_part2-fundamentals_chapter6.md\":\"ChJn8eiq\",\"zh_part2-fundamentals_chapter7.md\":\"Dws5eFDk\",\"zh_part3-practice_chapter10.md\":\"DUfMZCEx\",\"zh_part3-practice_chapter11.md\":\"cvl8iteP\",\"zh_part3-practice_chapter12.md\":\"Uchb2BEG\",\"zh_part3-practice_chapter8.md\":\"DuLmH8Gp\",\"zh_part3-practice_chapter9.md\":\"CiYlWCm4\",\"zh_part4-advanced_chapter13.md\":\"DyYoDD5L\",\"zh_part4-advanced_chapter14.md\":\"DKF5OZMj\",\"zh_part4-advanced_chapter15.md\":\"DvA7ANUN\",\"zh_part5-career_chapter16.md\":\"C-hIzEas\",\"zh_part5-career_chapter17.md\":\"CfUjJtpj\",\"zh_part5-career_chapter18.md\":\"Br1I0ACE\",\"zh_part5-career_chapter19.md\":\"Did5bZqz\",\"zh_part5-career_chapter20.md\":\"CQ7ehHSd\"}");window.__VP_SITE_DATA__=JSON.parse("{\"lang\":\"en-US\",\"dir\":\"ltr\",\"title\":\"Jumpstart AI\",\"description\":\"Build First, Learn As You Go - AI应用开发入行实战\",\"base\":\"/jumpstart-ai/\",\"head\":[],\"router\":{\"prefetchLinks\":true},\"appearance\":true,\"themeConfig\":{\"logo\":\"/logo.svg\",\"search\":{\"provider\":\"local\",\"options\":{\"detailedView\":true}},\"socialLinks\":[{\"icon\":\"github\",\"link\":\"https://github.com/jnlk-cn/jumpstart-ai\"}]},\"locales\":{\"zh\":{\"label\":\"简体中文\",\"lang\":\"zh-CN\",\"link\":\"/zh/\",\"themeConfig\":{\"siteTitle\":\"AI应用开发入行实战\",\"docFooter\":{\"prev\":\"上一篇\",\"next\":\"下一篇\"},\"outline\":{\"level\":[2,3],\"label\":\"目录\"},\"lastUpdated\":{\"text\":\"最后更新于\"},\"nav\":[{\"text\":\"首页\",\"link\":\"/zh/\"},{\"text\":\"认知篇\",\"link\":\"/zh/part1-cognition/chapter1\",\"activeMatch\":\"/zh/part1-cognition\"},{\"text\":\"基础篇\",\"link\":\"/zh/part2-fundamentals/chapter4\",\"activeMatch\":\"/zh/part2-fundamentals\"},{\"text\":\"实战篇\",\"link\":\"/zh/part3-practice/chapter8\",\"activeMatch\":\"/zh/part3-practice\"},{\"text\":\"进阶篇\",\"link\":\"/zh/part4-advanced/chapter13\",\"activeMatch\":\"/zh/part4-advanced\"},{\"text\":\"求职篇\",\"link\":\"/zh/part5-career/chapter16\",\"activeMatch\":\"/zh/part5-career\"},{\"text\":\"附录\",\"link\":\"/zh/appendix/appendix-a\",\"activeMatch\":\"/zh/appendix\"}],\"sidebar\":{\"/zh/part1-cognition\":[{\"text\":\"第一篇 认知篇\",\"items\":[{\"text\":\"第1章 AI应用开发的真相\",\"link\":\"/zh/part1-cognition/chapter1\"},{\"text\":\"第2章 为什么先混进去是理性策略\",\"link\":\"/zh/part1-cognition/chapter2\"},{\"text\":\"第3章 你的入行路线图\",\"link\":\"/zh/part1-cognition/chapter3\"}]}],\"/zh/part2-fundamentals\":[{\"text\":\"第二篇 基础篇\",\"items\":[{\"text\":\"第4章 Python与工程基础\",\"link\":\"/zh/part2-fundamentals/chapter4\"},{\"text\":\"第5章 大模型调用与Prompt工程\",\"link\":\"/zh/part2-fundamentals/chapter5\"},{\"text\":\"第6章 RAG检索增强生成\",\"link\":\"/zh/part2-fundamentals/chapter6\"},{\"text\":\"第7章 AI Agent核心逻辑\",\"link\":\"/zh/part2-fundamentals/chapter7\"}]}],\"/zh/part3-practice\":[{\"text\":\"第三篇 实战篇\",\"items\":[{\"text\":\"第8章 从Prompt工程到Agent助理开发的演变\",\"link\":\"/zh/part3-practice/chapter8\"},{\"text\":\"第9章 LangChain实战\",\"link\":\"/zh/part3-practice/chapter9\"},{\"text\":\"第10章 LlamaIndex与向量数据库\",\"link\":\"/zh/part3-practice/chapter10\"},{\"text\":\"第11章 Agent助理开发实战与Skill开发\",\"link\":\"/zh/part3-practice/chapter11\"},{\"text\":\"第12章 服务部署与工程化\",\"link\":\"/zh/part3-practice/chapter12\"}]}],\"/zh/part4-advanced\":[{\"text\":\"第四篇 进阶篇\",\"items\":[{\"text\":\"第13章 复现开源项目攒排坑经验\",\"link\":\"/zh/part4-advanced/chapter13\"},{\"text\":\"第14章 业务思维从需求到落地\",\"link\":\"/zh/part4-advanced/chapter14\"},{\"text\":\"第15章 系统学习与知识体系搭建\",\"link\":\"/zh/part4-advanced/chapter15\"}]}],\"/zh/part5-career\":[{\"text\":\"第五篇 求职篇\",\"items\":[{\"text\":\"第16章 简历与作品集\",\"link\":\"/zh/part5-career/chapter16\"},{\"text\":\"第17章 面试实战\",\"link\":\"/zh/part5-career/chapter17\"},{\"text\":\"第18章 入职前30天快速站稳\",\"link\":\"/zh/part5-career/chapter18\"},{\"text\":\"第19章 入职后6个月从混进去到站得住\",\"link\":\"/zh/part5-career/chapter19\"},{\"text\":\"第20章 AI应用开发者的未来\",\"link\":\"/zh/part5-career/chapter20\"}]}],\"/zh/appendix\":[{\"text\":\"附录\",\"items\":[{\"text\":\"附录A AI应用开发工具速查表\",\"link\":\"/zh/appendix/appendix-a\"},{\"text\":\"附录B 常见报错与解决方案索引\",\"link\":\"/zh/appendix/appendix-b\"},{\"text\":\"附录C 推荐学习资源完整清单\",\"link\":\"/zh/appendix/appendix-c\"},{\"text\":\"附录D 8周入行计划日历\",\"link\":\"/zh/appendix/appendix-d\"},{\"text\":\"附录E 面试高频题50问\",\"link\":\"/zh/appendix/appendix-e\"}]}]},\"editLink\":{\"pattern\":\"https://github.com/jnlk-cn/jumpstart-ai/edit/main/docs/:path\",\"text\":\"在 GitHub 上编辑此页\"},\"footer\":{\"message\":\"基于 MIT 许可证发布\",\"copyright\":\"Copyright © 2024-present jnlk-cn\"}}},\"en\":{\"label\":\"English\",\"lang\":\"en-US\",\"link\":\"/en/\",\"themeConfig\":{\"siteTitle\":\"Jumpstart AI\",\"docFooter\":{\"prev\":\"Previous\",\"next\":\"Next\"},\"outline\":{\"level\":[2,3],\"label\":\"On This Page\"},\"lastUpdated\":{\"text\":\"Last updated\"},\"nav\":[{\"text\":\"Home\",\"link\":\"/en/\"},{\"text\":\"Cognition\",\"link\":\"/en/part1-cognition/chapter1\",\"activeMatch\":\"/en/part1-cognition\"},{\"text\":\"Fundamentals\",\"link\":\"/en/part2-fundamentals/chapter4\",\"activeMatch\":\"/en/part2-fundamentals\"},{\"text\":\"Practice\",\"link\":\"/en/part3-practice/chapter8\",\"activeMatch\":\"/en/part3-practice\"},{\"text\":\"Advanced\",\"link\":\"/en/part4-advanced/chapter13\",\"activeMatch\":\"/en/part4-advanced\"},{\"text\":\"Career\",\"link\":\"/en/part5-career/chapter16\",\"activeMatch\":\"/en/part5-career\"},{\"text\":\"Appendix\",\"link\":\"/en/appendix/appendix-a\",\"activeMatch\":\"/en/appendix\"}],\"sidebar\":{\"/en/part1-cognition\":[{\"text\":\"Part I: Cognition\",\"items\":[{\"text\":\"Ch.1 The Truth About AI App Development\",\"link\":\"/en/part1-cognition/chapter1\"},{\"text\":\"Ch.2 Why \\\"Jump In First\\\" Is Rational\",\"link\":\"/en/part1-cognition/chapter2\"},{\"text\":\"Ch.3 Your Career Roadmap\",\"link\":\"/en/part1-cognition/chapter3\"}]}],\"/en/part2-fundamentals\":[{\"text\":\"Part II: Fundamentals\",\"items\":[{\"text\":\"Ch.4 Python & Engineering Basics\",\"link\":\"/en/part2-fundamentals/chapter4\"},{\"text\":\"Ch.5 LLM APIs & Prompt Engineering\",\"link\":\"/en/part2-fundamentals/chapter5\"},{\"text\":\"Ch.6 RAG - Retrieval Augmented Generation\",\"link\":\"/en/part2-fundamentals/chapter6\"},{\"text\":\"Ch.7 AI Agent Core Logic\",\"link\":\"/en/part2-fundamentals/chapter7\"}]}],\"/en/part3-practice\":[{\"text\":\"Part III: Practice\",\"items\":[{\"text\":\"Ch.8 From Prompts to Agent Assistants\",\"link\":\"/en/part3-practice/chapter8\"},{\"text\":\"Ch.9 LangChain in Action\",\"link\":\"/en/part3-practice/chapter9\"},{\"text\":\"Ch.10 LlamaIndex & Vector Databases\",\"link\":\"/en/part3-practice/chapter10\"},{\"text\":\"Ch.11 Agent & Skill Development\",\"link\":\"/en/part3-practice/chapter11\"},{\"text\":\"Ch.12 Deployment & Engineering\",\"link\":\"/en/part3-practice/chapter12\"}]}],\"/en/part4-advanced\":[{\"text\":\"Part IV: Advanced\",\"items\":[{\"text\":\"Ch.13 Reproduce Open-Source Projects\",\"link\":\"/en/part4-advanced/chapter13\"},{\"text\":\"Ch.14 Business Thinking\",\"link\":\"/en/part4-advanced/chapter14\"},{\"text\":\"Ch.15 Systematic Learning\",\"link\":\"/en/part4-advanced/chapter15\"}]}],\"/en/part5-career\":[{\"text\":\"Part V: Career\",\"items\":[{\"text\":\"Ch.16 Resume & Portfolio\",\"link\":\"/en/part5-career/chapter16\"},{\"text\":\"Ch.17 Interview Tactics\",\"link\":\"/en/part5-career/chapter17\"},{\"text\":\"Ch.18 First 30 Days\",\"link\":\"/en/part5-career/chapter18\"},{\"text\":\"Ch.19 From Surviving to Thriving\",\"link\":\"/en/part5-career/chapter19\"},{\"text\":\"Ch.20 The Future of AI Developers\",\"link\":\"/en/part5-career/chapter20\"}]}],\"/en/appendix\":[{\"text\":\"Appendix\",\"items\":[{\"text\":\"A. AI Dev Tool Cheat Sheet\",\"link\":\"/en/appendix/appendix-a\"},{\"text\":\"B. Common Errors & Solutions\",\"link\":\"/en/appendix/appendix-b\"},{\"text\":\"C. Learning Resources\",\"link\":\"/en/appendix/appendix-c\"},{\"text\":\"D. 8-Week Plan Calendar\",\"link\":\"/en/appendix/appendix-d\"},{\"text\":\"E. Top 50 Interview Questions\",\"link\":\"/en/appendix/appendix-e\"}]}]},\"editLink\":{\"pattern\":\"https://github.com/jnlk-cn/jumpstart-ai/edit/main/docs/:path\",\"text\":\"Edit this page on GitHub\"},\"footer\":{\"message\":\"Released under the MIT License\",\"copyright\":\"Copyright © 2024-present jnlk-cn\"}}},\"ja\":{\"label\":\"日本語\",\"lang\":\"ja-JP\",\"link\":\"/ja/\",\"themeConfig\":{\"siteTitle\":\"AIアプリ開発実践\",\"docFooter\":{\"prev\":\"前へ\",\"next\":\"次へ\"},\"outline\":{\"level\":[2,3],\"label\":\"目次\"},\"lastUpdated\":{\"text\":\"最終更新\"},\"nav\":[{\"text\":\"ホーム\",\"link\":\"/ja/\"},{\"text\":\"認知編\",\"link\":\"/ja/part1-cognition/chapter1\",\"activeMatch\":\"/ja/part1-cognition\"},{\"text\":\"基礎編\",\"link\":\"/ja/part2-fundamentals/chapter4\",\"activeMatch\":\"/ja/part2-fundamentals\"},{\"text\":\"実践編\",\"link\":\"/ja/part3-practice/chapter8\",\"activeMatch\":\"/ja/part3-practice\"},{\"text\":\"応用編\",\"link\":\"/ja/part4-advanced/chapter13\",\"activeMatch\":\"/ja/part4-advanced\"},{\"text\":\"就職編\",\"link\":\"/ja/part5-career/chapter16\",\"activeMatch\":\"/ja/part5-career\"},{\"text\":\"付録\",\"link\":\"/ja/appendix/appendix-a\",\"activeMatch\":\"/ja/appendix\"}],\"sidebar\":{\"/ja/part1-cognition\":[{\"text\":\"第一篇 認知編\",\"items\":[{\"text\":\"第1章 AIアプリ開発の真実\",\"link\":\"/ja/part1-cognition/chapter1\"},{\"text\":\"第2章 なぜ「まず乗れ」が合理的か\",\"link\":\"/ja/part1-cognition/chapter2\"},{\"text\":\"第3章 キャリアロードマップ\",\"link\":\"/ja/part1-cognition/chapter3\"}]}],\"/ja/part2-fundamentals\":[{\"text\":\"第二篇 基礎編\",\"items\":[{\"text\":\"第4章 Pythonとエンジニアリング基礎\",\"link\":\"/ja/part2-fundamentals/chapter4\"},{\"text\":\"第5章 LLM APIとプロンプトエンジニアリング\",\"link\":\"/ja/part2-fundamentals/chapter5\"},{\"text\":\"第6章 RAG - 検索拡張生成\",\"link\":\"/ja/part2-fundamentals/chapter6\"},{\"text\":\"第7章 AIエージェントのコアロジック\",\"link\":\"/ja/part2-fundamentals/chapter7\"}]}],\"/ja/part3-practice\":[{\"text\":\"第三篇 実践編\",\"items\":[{\"text\":\"第8章 プロンプトからエージェントへの進化\",\"link\":\"/ja/part3-practice/chapter8\"},{\"text\":\"第9章 LangChain実践\",\"link\":\"/ja/part3-practice/chapter9\"},{\"text\":\"第10章 LlamaIndexとベクトルデータベース\",\"link\":\"/ja/part3-practice/chapter10\"},{\"text\":\"第11章 エージェント＆Skill開発\",\"link\":\"/ja/part3-practice/chapter11\"},{\"text\":\"第12章 デプロイとエンジニアリング\",\"link\":\"/ja/part3-practice/chapter12\"}]}],\"/ja/part4-advanced\":[{\"text\":\"第四篇 応用編\",\"items\":[{\"text\":\"第13章 オープンソースプロジェクトの再現\",\"link\":\"/ja/part4-advanced/chapter13\"},{\"text\":\"第14章 ビジネス思考\",\"link\":\"/ja/part4-advanced/chapter14\"},{\"text\":\"第15章 体系的な学習\",\"link\":\"/ja/part4-advanced/chapter15\"}]}],\"/ja/part5-career\":[{\"text\":\"第五篇 就職編\",\"items\":[{\"text\":\"第16章 履歴書とポートフォリオ\",\"link\":\"/ja/part5-career/chapter16\"},{\"text\":\"第17章 面接戦術\",\"link\":\"/ja/part5-career/chapter17\"},{\"text\":\"第18章 入社後30日間\",\"link\":\"/ja/part5-career/chapter18\"},{\"text\":\"第19章 生き残りから成長へ\",\"link\":\"/ja/part5-career/chapter19\"},{\"text\":\"第20章 AI開発者の未来\",\"link\":\"/ja/part5-career/chapter20\"}]}],\"/ja/appendix\":[{\"text\":\"付録\",\"items\":[{\"text\":\"A. AI開発ツール早見表\",\"link\":\"/ja/appendix/appendix-a\"},{\"text\":\"B. よくあるエラーと解決策\",\"link\":\"/ja/appendix/appendix-b\"},{\"text\":\"C. 学習リソース\",\"link\":\"/ja/appendix/appendix-c\"},{\"text\":\"D. 8週間プランカレンダー\",\"link\":\"/ja/appendix/appendix-d\"},{\"text\":\"E. 面接頻出50問\",\"link\":\"/ja/appendix/appendix-e\"}]}]},\"editLink\":{\"pattern\":\"https://github.com/jnlk-cn/jumpstart-ai/edit/main/docs/:path\",\"text\":\"GitHubで編集\"},\"footer\":{\"message\":\"MITライセンスで公開\",\"copyright\":\"Copyright © 2024-present jnlk-cn\"}}},\"ko\":{\"label\":\"한국어\",\"lang\":\"ko-KR\",\"link\":\"/ko/\",\"themeConfig\":{\"siteTitle\":\"AI 앱 개발 실전\",\"docFooter\":{\"prev\":\"이전\",\"next\":\"다음\"},\"outline\":{\"level\":[2,3],\"label\":\"목차\"},\"lastUpdated\":{\"text\":\"마지막 업데이트\"},\"nav\":[{\"text\":\"홈\",\"link\":\"/ko/\"},{\"text\":\"인식편\",\"link\":\"/ko/part1-cognition/chapter1\",\"activeMatch\":\"/ko/part1-cognition\"},{\"text\":\"기초편\",\"link\":\"/ko/part2-fundamentals/chapter4\",\"activeMatch\":\"/ko/part2-fundamentals\"},{\"text\":\"실전편\",\"link\":\"/ko/part3-practice/chapter8\",\"activeMatch\":\"/ko/part3-practice\"},{\"text\":\"심화편\",\"link\":\"/ko/part4-advanced/chapter13\",\"activeMatch\":\"/ko/part4-advanced\"},{\"text\":\"취업편\",\"link\":\"/ko/part5-career/chapter16\",\"activeMatch\":\"/ko/part5-career\"},{\"text\":\"부록\",\"link\":\"/ko/appendix/appendix-a\",\"activeMatch\":\"/ko/appendix\"}],\"sidebar\":{\"/ko/part1-cognition\":[{\"text\":\"제1편 인식편\",\"items\":[{\"text\":\"제1장 AI 앱 개발의 진실\",\"link\":\"/ko/part1-cognition/chapter1\"},{\"text\":\"제2장 왜 \\\"먼저 타라\\\"가 합리적인가\",\"link\":\"/ko/part1-cognition/chapter2\"},{\"text\":\"제3장 커리어 로드맵\",\"link\":\"/ko/part1-cognition/chapter3\"}]}],\"/ko/part2-fundamentals\":[{\"text\":\"제2편 기초편\",\"items\":[{\"text\":\"제4장 Python과 엔지니어링 기초\",\"link\":\"/ko/part2-fundamentals/chapter4\"},{\"text\":\"제5장 LLM API와 프롬프트 엔지니어링\",\"link\":\"/ko/part2-fundamentals/chapter5\"},{\"text\":\"제6장 RAG - 검색 증강 생성\",\"link\":\"/ko/part2-fundamentals/chapter6\"},{\"text\":\"제7장 AI 에이전트 핵심 로직\",\"link\":\"/ko/part2-fundamentals/chapter7\"}]}],\"/ko/part3-practice\":[{\"text\":\"제3편 실전편\",\"items\":[{\"text\":\"제8장 프롬프트에서 에이전트로의 진화\",\"link\":\"/ko/part3-practice/chapter8\"},{\"text\":\"제9장 LangChain 실전\",\"link\":\"/ko/part3-practice/chapter9\"},{\"text\":\"제10장 LlamaIndex와 벡터 데이터베이스\",\"link\":\"/ko/part3-practice/chapter10\"},{\"text\":\"제11장 에이전트 & Skill 개발\",\"link\":\"/ko/part3-practice/chapter11\"},{\"text\":\"제12장 배포와 엔지니어링\",\"link\":\"/ko/part3-practice/chapter12\"}]}],\"/ko/part4-advanced\":[{\"text\":\"제4편 심화편\",\"items\":[{\"text\":\"제13장 오픈소스 프로젝트 재현\",\"link\":\"/ko/part4-advanced/chapter13\"},{\"text\":\"제14장 비즈니스 사고\",\"link\":\"/ko/part4-advanced/chapter14\"},{\"text\":\"제15장 체계적 학습\",\"link\":\"/ko/part4-advanced/chapter15\"}]}],\"/ko/part5-career\":[{\"text\":\"제5편 취업편\",\"items\":[{\"text\":\"제16장 이력서와 포트폴리오\",\"link\":\"/ko/part5-career/chapter16\"},{\"text\":\"제17장 면접 전술\",\"link\":\"/ko/part5-career/chapter17\"},{\"text\":\"제18장 입사 후 30일\",\"link\":\"/ko/part5-career/chapter18\"},{\"text\":\"제19장 생존에서 성장으로\",\"link\":\"/ko/part5-career/chapter19\"},{\"text\":\"제20장 AI 개발자의 미래\",\"link\":\"/ko/part5-career/chapter20\"}]}],\"/ko/appendix\":[{\"text\":\"부록\",\"items\":[{\"text\":\"A. AI 개발 도구 치트시트\",\"link\":\"/ko/appendix/appendix-a\"},{\"text\":\"B. 자주 발생하는 에러와 해결책\",\"link\":\"/ko/appendix/appendix-b\"},{\"text\":\"C. 학습 리소스\",\"link\":\"/ko/appendix/appendix-c\"},{\"text\":\"D. 8주 계획 캘린더\",\"link\":\"/ko/appendix/appendix-d\"},{\"text\":\"E. 면접 빈출 50문\",\"link\":\"/ko/appendix/appendix-e\"}]}]},\"editLink\":{\"pattern\":\"https://github.com/jnlk-cn/jumpstart-ai/edit/main/docs/:path\",\"text\":\"GitHub에서 편집\"},\"footer\":{\"message\":\"MIT 라이선스로 배포\",\"copyright\":\"Copyright © 2024-present jnlk-cn\"}}}},\"scrollOffset\":134,\"cleanUrls\":false}");</script>
+    
+  </body>
+</html>
